@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biostatistics & Research Methodology | Nature Portfolio Journal Edition</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            nature: {
+              crimson: '#c70000',
+              darkcrimson: '#9b0000',
+              accent: '#b91c1c',
+              gold: '#b45309',
+              slate: '#1e293b',
+              navy: '#0f172a',
+              paper: '#fcfcfc',
+              border: '#e2e8f0',
+              muted: '#64748b'
+            }
+          },
+          fontFamily: {
+            serif: ['"Newsreader"', '"Merriweather"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Google Fonts: Newsreader (Editorial Serif) & Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Nature Portfolio Editorial Styles */
+    .nature-journal-border {
+      border-top: 3px solid #c70000;
+    }
+    .editorial-dropcap::first-letter {
+      float: left;
+      font-size: 3.5rem;
+      line-height: 2.8rem;
+      padding-top: 4px;
+      padding-right: 8px;
+      padding-bottom: 2px;
+      font-family: "Newsreader", serif;
+      font-weight: 700;
+      color: #c70000;
+    }
+    .tool-btn-active {
+      background-color: #c70000 !important;
+      color: #ffffff !important;
+      border-color: #9b0000 !important;
+      box-shadow: 0 4px 14px rgba(199, 0, 0, 0.25);
+    }
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #c70000; }
+    .dark ::-webkit-scrollbar-track { background: #0f172a; }
+    .dark ::-webkit-scrollbar-thumb { background: #334155; }
+    @media print {
+      header, nav, footer, #quiz-modal, .no-print { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+      .page-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="bg-[#fbfbfc] text-slate-800 dark:bg-[#0c121e] dark:text-slate-100 font-sans antialiased selection:bg-nature-crimson selection:text-white transition-colors duration-200">
+
+  <!-- ================= TOP MASTHEAD: NATURE PORTFOLIO STYLE ================= -->
+  <header class="border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#0f172a]/95 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Institutional Banner -->
+      <div class="flex items-center justify-between py-2 border-b border-slate-100 dark:border-slate-800/80 text-[11px] text-slate-500 font-medium">
+        <div class="flex items-center gap-3">
+          <span class="text-nature-crimson font-bold uppercase tracking-widest flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-nature-crimson"></span>
+            Nature Nutrition & Biostatistics
+          </span>
+          <span class="hidden md:inline text-slate-300 dark:text-slate-700">|</span>
+          <span class="hidden md:inline">M.Sc Semester 3 Curriculum Companion (Units 1 & 2)</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="font-mono text-[10px] text-slate-400">Ref: UGC-NET / Research Aptitude pp. 65–95</span>
+          <button id="theme-toggle" class="p-1 rounded text-slate-400 hover:text-slate-700 dark:hover:text-slate-200" title="Toggle Light/Dark Theme">
+            <i data-lucide="moon" class="w-3.5 h-3.5 hidden dark:block"></i>
+            <i data-lucide="sun" class="w-3.5 h-3.5 block dark:hidden"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Journal Main Header Bar -->
+      <div class="flex items-center justify-between h-16">
+        
+        <a href="#top" class="flex items-baseline gap-2 group">
+          <span class="font-serif text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+            nature <span class="font-sans font-light text-nature-crimson text-xl">biostatistics</span>
+          </span>
+          <span class="text-[10px] uppercase font-mono font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-1.5 py-0.5 rounded">Lab Edition</span>
+        </a>
+
+        <!-- Navigation Tabs -->
+        <nav class="hidden lg:flex items-center gap-1 text-xs font-semibold text-slate-600 dark:text-slate-300">
+          <a href="#stats-lab" class="px-3 py-1.5 rounded-md bg-red-50 dark:bg-red-950/40 text-nature-crimson dark:text-red-300 border border-red-200 dark:border-red-900/60 font-bold hover:bg-red-100 transition flex items-center gap-1.5">
+            <i data-lucide="activity" class="w-3.5 h-3.5 text-nature-crimson"></i>
+            <span>Statistical Tool Lab</span>
+          </a>
+          <a href="#unit-1" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Unit 1: Biostatistics</a>
+          <a href="#unit-2" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Unit 2: Research Methods</a>
+          <a href="#cochran-calculator" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Sample Sizing</a>
+          <a href="#bio-databases" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Bio-Databases</a>
+          <a href="#exam-glossary" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Glossary & Viva</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button onclick="toggleQuizModal()" class="px-3 py-1.5 rounded-md text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition flex items-center gap-1.5">
+            <i data-lucide="help-circle" class="w-3.5 h-3.5"></i>
+            <span>Self-Test Quiz</span>
+          </button>
+          <button onclick="window.print()" class="p-2 rounded-md text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Print/Export Notes">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ================= HERO EDITORIAL PANEL ================= -->
+  <section id="top" class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] pt-10 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Nature Article Metadata Header -->
+      <div class="mb-4">
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-nature-crimson">Comprehensive Syllabus Reference • Sem 3 Food Science & Nutrition</span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 dark:text-white mt-1 leading-tight tracking-tight">
+          Biostatistics & Scientific Research Methodology
+        </h1>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 max-w-3xl leading-relaxed">
+          An authoritative digital laboratory mapping <strong>Unit 1 (Biostatistics, Data, Probability & Internet Sequence Databases)</strong> and <strong>Unit 2 (Research Methodology, Study Design, Hypothesis Testing & Reporting)</strong>. Featuring interactive nutritional data simulations, test calculations, and formal academic thesis interpretations.
+        </p>
+      </div>
+
+      <!-- Quick Action Badges -->
+      <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+        <a href="#stats-lab" class="px-3.5 py-1.5 rounded bg-nature-crimson text-white font-medium text-xs hover:bg-nature-darkcrimson transition flex items-center gap-1.5 shadow-sm">
+          <i data-lucide="play" class="w-3.5 h-3.5 fill-white"></i>
+          <span>Launch Interactive Statistical Lab (7 Tools)</span>
+        </a>
+        <a href="#cochran-calculator" class="px-3 py-1.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-200 transition flex items-center gap-1">
+          <i data-lucide="calculator" class="w-3.5 h-3.5 text-nature-crimson"></i>
+          <span>Sample Size Calculator</span>
+        </a>
+        <a href="#unit-1" class="px-3 py-1.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-200 transition">
+          <span>Explore Unit 1 (Biostats)</span>
+        </a>
+        <a href="#unit-2" class="px-3 py-1.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-200 transition">
+          <span>Explore Unit 2 (Methods)</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= CORE FEATURE: INTERACTIVE STATISTICAL TOOL LAB ================= -->
+  <section id="stats-lab" class="py-12 border-b border-slate-200 dark:border-slate-800 bg-[#f8fafc] dark:bg-[#090e17]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-wrap items-baseline justify-between gap-4 mb-6">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-nature-crimson"></span>
+            <span class="text-xs uppercase font-mono font-bold tracking-widest text-nature-crimson">Syllabus Practical Lab</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white mt-1">
+            Statistical Tools, Sample Datasets & Interpretation Simulator
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
+            Select any statistical test from Unit 1 & 2 to view its real nutritional sample dataset, mathematical output, and formal Nature-style thesis interpretation.
+          </p>
+        </div>
+        <span class="text-xs bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 px-3 py-1 rounded font-mono">
+          7 Prescribed Statistical Tests
+        </span>
+      </div>
+
+      <!-- 7 STATISTICAL TOOL BUTTONS -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 mb-6" id="tool-buttons-container">
+        
+        <button onclick="switchLabTool(1)" id="tool-btn-1" 
+          class="tool-btn p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-left transition hover:border-nature-crimson tool-btn-active">
+          <span class="text-[10px] font-mono text-slate-400 block font-bold">TOOL 01</span>
+          <strong class="text-xs block font-bold leading-tight mt-0.5">Mean, Median & SD</strong>
+          <span class="text-[10px] opacity-80 block mt-1">Dispersion & Skew</span>
+        </button>
+
+        <button onclick="switchLabTool(2)" id="tool-btn-2" 
+          class="tool-btn p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-left transition hover:border-nature-crimson">
+          <span class="text-[10px] font-mono text-slate-400 block font-bold">TOOL 02</span>
+          <strong class="text-xs block font-bold leading-tight mt-0.5">Independent 't'-Test</strong>
+          <span class="text-[10px] opacity-80 block mt-1">Iron vs Control Group</span>
+        </button>
+
+        <button onclick="switchLabTool(3)" id="tool-btn-3" 
+          class="tool-btn p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-left transition hover:border-nature-crimson">
+          <span class="text-[10px] font-mono text-slate-400 block font-bold">TOOL 03</span>
+          <strong class="text-xs block font-bold leading-tight mt-0.5">Paired 't'-Test</strong>
+          <span class="text-[10px] opacity-80 block mt-1">Before & After Diet</span>
+        </button>
+
+        <button onclick="switchLabTool(4)" id="tool-btn-4" 
+          class="tool-btn p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-left transition hover:border-nature-crimson">
+          <span class="text-[10px] font-mono text-slate-400 block font-bold">TOOL 04</span>
+          <strong class="text-xs block font-bold leading-tight mt-0.5">Chi-Square Test (χ²)</strong>
+          <span class="text-[10px] opacity-80 block mt-1">Deficiency vs Symptoms</span>
+        </button>
+
+        <button onclick="switchLabTool(5)" id="tool-btn-5" 
+          class="tool-btn p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-left transition hover:border-nature-crimson">
+          <span class="text-[10px] font-mono text-slate-400 block font-bold">TOOL 05</span>
+          <strong class="text-xs block font-bold leading-tight mt-0.5">Correlation (r)</strong>
+          <span class="text-[10px] opacity-80 block mt-1">Sodium vs Blood Pressure</span>
+        </button>
+
+        <button onclick="switchLabTool(6)" id="tool-btn-6" 
+          class="tool-btn p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-left transition hover:border-nature-crimson">
+          <span class="text-[10px] font-mono text-slate-400 block font-bold">TOOL 06</span>
+          <strong class="text-xs block font-bold leading-tight mt-0.5">Linear Regression</strong>
+          <span class="text-[10px] opacity-80 block mt-1">Predicting Plasma Vit C</span>
+        </button>
+
+        <button onclick="switchLabTool(7)" id="tool-btn-7" 
+          class="tool-btn p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-left transition hover:border-nature-crimson">
+          <span class="text-[10px] font-mono text-slate-400 block font-bold">TOOL 07</span>
+          <strong class="text-xs block font-bold leading-tight mt-0.5">One-Way ANOVA</strong>
+          <span class="text-[10px] opacity-80 block mt-1">3 Calcium Diet Arms</span>
+        </button>
+
+      </div>
+
+      <!-- MAIN DISPLAY CARD -->
+      <div class="bg-white dark:bg-[#0f172a] rounded-xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+        
+        <!-- Question & Meta Header -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800 mb-6">
+          <div>
+            <span id="lab-tool-category" class="text-[10px] font-mono uppercase font-bold text-nature-crimson tracking-wider">
+              UNIT 1: ANALYSIS OF DATA • MEASURES OF CENTRAL TENDENCY & DISPERSION
+            </span>
+            <h3 id="lab-research-question" class="text-lg sm:text-xl font-serif font-bold text-slate-900 dark:text-white mt-0.5">
+              Analyzing daily dietary protein intake (g/day) distribution across 12 university athletes.
+            </h3>
+          </div>
+          <span id="lab-scale-badge" class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full font-mono font-medium">
+            Continuous Ratio Scale
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- Left Column: Raw Dataset Table & Live Chart -->
+          <div class="lg:col-span-6 space-y-4">
+            
+            <div class="rounded-lg border border-slate-200 dark:border-slate-800 overflow-hidden">
+              <div class="px-4 py-2 bg-slate-50 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center text-xs">
+                <span class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <i data-lucide="table" class="w-3.5 h-3.5 text-nature-crimson"></i>
+                  Sample Dataset Observations
+                </span>
+                <span class="font-mono text-[10px] text-slate-400">Nutritional Science Sample</span>
+              </div>
+              <div class="overflow-x-auto max-h-56">
+                <table class="w-full text-left text-xs" id="lab-dataset-table">
+                  <!-- Populated via JavaScript -->
+                </table>
+              </div>
+            </div>
+
+            <!-- Dynamic Chart Panel -->
+            <div class="rounded-lg border border-slate-200 dark:border-slate-800 p-4 bg-slate-50/50 dark:bg-slate-900/40">
+              <div class="flex justify-between items-center mb-2">
+                <h4 id="lab-chart-caption" class="text-xs font-bold text-slate-800 dark:text-slate-200">
+                  Data Distribution & Plot
+                </h4>
+                <span class="text-[10px] font-mono text-slate-400">Figure 1.1</span>
+              </div>
+              <div class="h-48 relative">
+                <canvas id="labDynamicChart"></canvas>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Method Selection, Calculated Output & Thesis Interpretation -->
+          <div class="lg:col-span-6 space-y-4">
+            
+            <!-- Tool Applied & Rationale -->
+            <div class="p-4 rounded-lg bg-red-50/50 dark:bg-red-950/20 border border-red-100 dark:border-red-900/40">
+              <span class="text-[10px] font-mono uppercase text-nature-crimson font-bold block mb-1">1. Appropriate Statistical Tool & Rationale</span>
+              <h4 id="lab-applied-method" class="text-base font-bold text-slate-900 dark:text-white">
+                Parametric Summary: Mean, Median, Mode, Range, Mean Deviation & Standard Deviation (SD)
+              </h4>
+              <p id="lab-method-rationale" class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                Why this method: When evaluating continuous ratio data (grams of protein), reporting both central location (Mean, Median) and spread (SD, Range) is mandatory to assess skewness before choosing inferential hypothesis tests.
+              </p>
+            </div>
+
+            <!-- Computed Statistical Results Box -->
+            <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+              <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block mb-2">2. Computed Statistical Outputs</span>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center" id="lab-metrics-container">
+                <!-- Populated via JavaScript -->
+              </div>
+            </div>
+
+            <!-- Interpretation & Nature Portfolio Reporting Style -->
+            <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3">
+              <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">3. Scientific Interpretation & Thesis Writing</span>
+              
+              <div class="p-3 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700 text-xs">
+                <strong class="text-slate-800 dark:text-slate-200 block mb-0.5">Plain-English Student Meaning:</strong>
+                <p id="lab-plain-interpretation" class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  The mean protein intake is 84.5 g/day, while the median is 83.5 g/day. Because the mean and median are closely aligned, the data is relatively symmetric with a standard deviation of 11.8 g/day indicating moderate variability around the mean.
+                </p>
+              </div>
+
+              <div class="p-3 rounded bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/40 text-xs">
+                <strong class="text-amber-900 dark:text-amber-200 block mb-0.5 flex items-center gap-1 font-semibold">
+                  <i data-lucide="feather" class="w-3.5 h-3.5 text-nature-crimson"></i>
+                  Nature Portfolio / Thesis Standard Formulation:
+                </strong>
+                <p id="lab-thesis-sentence" class="text-slate-800 dark:text-slate-200 italic font-serif leading-relaxed">
+                  "Daily protein intake in the athletic cohort averaged 84.5 ± 11.8 g/day (Median = 83.5 g, IQR = 77.5–91.0 g, Range = 65–110 g; n = 12), exhibiting normal distributional symmetry verified via Shapiro–Wilk normality testing (p = 0.42)."
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= UNIT 1: BIOSTATISTICS & DATA COLLECTION ================= -->
+  <section id="unit-1" class="py-14 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-10">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-nature-crimson">Syllabus Unit 1</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white mt-1">
+          Biostatistics, Probability & Data Collection Methods
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
+          Core biostatistical foundations from pp. 65–88: classification of data, population vs sample, measures of central tendency, dispersion, probability distribution, schedules, questionnaires, and reliability.
+        </p>
+      </div>
+
+      <!-- Core Topics Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        
+        <!-- 1. Types of Data & Population vs Sample -->
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <span class="p-1.5 rounded bg-red-100 text-nature-crimson dark:bg-red-950 dark:text-red-300 font-mono text-xs font-bold">1.1</span>
+            <span class="text-[10px] font-mono text-slate-400 uppercase">Foundations</span>
+          </div>
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white mb-2">Types of Data & Sampling</h3>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+            <li>• <strong>Qualitative Data:</strong> Descriptive non-numerical categories (e.g. food preferences, clinical signs of pallor).</li>
+            <li>• <strong>Quantitative Data:</strong> Numerical values (e.g. serum ferritin in $\mu\text{g/L}$, dietary sodium in $\text{mg/day}$).</li>
+            <li>• <strong>Population (Universe):</strong> Entire group of interest (e.g. all 10,000 pregnant women in a state).</li>
+            <li>• <strong>Sample:</strong> A representative subset selected for empirical investigation ($n = 400$).</li>
+          </ul>
+        </div>
+
+        <!-- 2. Central Tendency & Dispersion -->
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <span class="p-1.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 font-mono text-xs font-bold">1.2</span>
+            <span class="text-[10px] font-mono text-slate-400 uppercase">Descriptive Stats</span>
+          </div>
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white mb-2">Central Tendency & Spread</h3>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+            <li>• <strong>Mean ($\bar{x}$):</strong> Arithmetic average $\sum x / n$ (sensitive to extreme outliers).</li>
+            <li>• <strong>Median ($M$):</strong> Exact middle value of ordered observations (best for skewed income or vitamin levels).</li>
+            <li>• <strong>Mode:</strong> Most frequently occurring value (e.g. most popular hostel meal).</li>
+            <li>• <strong>Standard Deviation ($\sigma$):</strong> Root mean square deviation; measures dispersion around the mean.</li>
+          </ul>
+        </div>
+
+        <!-- 3. Probability & Distribution Theory -->
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <span class="p-1.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 font-mono text-xs font-bold">1.3</span>
+            <span class="text-[10px] font-mono text-slate-400 uppercase">Probability</span>
+          </div>
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white mb-2">Probability & Distributions</h3>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+            <li>• <strong>Basic Probability:</strong> Ratio of favorable outcomes to total possible outcomes ($P = m/N$, bounds $[0, 1]$).</li>
+            <li>• <strong>Normal Distribution (Gaussian):</strong> Symmetrical bell-shaped curve where Mean = Median = Mode. $68.2\%$ lies within $\pm 1\sigma$; $95.4\%$ within $\pm 2\sigma$.</li>
+            <li>• <strong>Binomial & Poisson:</strong> Discrete probability models for event rates (e.g. incidence of foodborne illness outbreaks).</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Data Collection Methods, Questionnaire vs Schedule, Validity -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+        
+        <!-- Questionnaire vs Schedule Table -->
+        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-5 shadow-sm">
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+            <i data-lucide="clipboard-list" class="w-4 h-4 text-nature-crimson"></i>
+            Methods of Data Collection: Questionnaire vs Schedule
+          </h3>
+          <p class="text-xs text-slate-500 mb-4">A critical distinction frequently tested in university examinations.</p>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 dark:bg-slate-800 font-bold border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="py-2.5 px-3">Feature</th>
+                  <th class="py-2.5 px-3">Questionnaire</th>
+                  <th class="py-2.5 px-3">Schedule</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                <tr>
+                  <td class="py-2 px-3 font-semibold text-slate-800 dark:text-slate-200">Administration</td>
+                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Mailed or handed to respondent to fill by themselves.</td>
+                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Filled directly by a trained enumerator/researcher in person.</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-semibold text-slate-800 dark:text-slate-200">Literacy Requirement</td>
+                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Requires literate respondents who can read and write.</td>
+                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Works with illiterate populations as interviewer reads questions.</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-semibold text-slate-800 dark:text-slate-200">Cost & Reach</td>
+                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Economical for wide geographical reach; low response rate.</td>
+                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">More expensive (enumerator travel/training), but high response rate.</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-semibold text-slate-800 dark:text-slate-200">Nutritional Example</td>
+                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Mailed Food Frequency Questionnaire (FFQ) to office workers.</td>
+                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Home visit 24-hour dietary recall administered by a field dietitian.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Reliability and Validity of Measuring Tools -->
+        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-5 shadow-sm space-y-3">
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white mb-1 flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+            Reliability vs Validity of Nutrition Tools
+          </h3>
+          <p class="text-xs text-slate-500">How to ensure dietary assessment instruments yield trustworthy empirical evidence.</p>
+
+          <div class="space-y-2.5 text-xs">
+            <div class="p-3 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700">
+              <strong class="text-emerald-700 dark:text-emerald-400 font-bold block mb-0.5">Reliability (Consistency):</strong>
+              <p class="text-slate-600 dark:text-slate-300">
+                If the test is repeated under identical conditions, does it give the same result? Measured via <em>Test–Retest Reliability</em>, <em>Inter-Rater Agreement</em>, or Cronbach's Alpha ($\alpha \ge 0.70$).
+                <br/><span class="text-slate-500 italic">Example: A digital weighing scale yielding 62.4 kg five consecutive times.</span>
+              </p>
+            </div>
+            <div class="p-3 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700">
+              <strong class="text-nature-crimson dark:text-red-400 font-bold block mb-0.5">Validity (Accuracy / Truthfulness):</strong>
+              <p class="text-slate-600 dark:text-slate-300">
+                Does the tool measure what it actually claims to measure? Includes <em>Content Validity</em>, <em>Construct Validity</em>, and <em>Criterion Validity</em>.
+                <br/><span class="text-slate-500 italic">Example: Validating an FFQ's reported protein intake against 24-hour urinary nitrogen biomarkers.</span>
+              </p>
+            </div>
+            <div class="p-2.5 rounded bg-blue-50/60 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900 text-[11px] text-blue-900 dark:text-blue-200 font-medium">
+              *Key Scientific Axiom: A measuring tool can be highly reliable (giving identical wrong numbers every time) while being completely invalid! Validity requires true accuracy.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SEQUENCE & BIOLOGICAL DATABASES ON THE INTERNET (UNIT 1 SPECIFIC REQUIREMENT) -->
+      <div id="bio-databases" class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-6 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
+          <div>
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-nature-crimson">Syllabus Mandate</span>
+            <h3 class="font-serif font-bold text-lg text-slate-900 dark:text-white">
+              Access to Sequence & Nutrient Databases on the Internet
+            </h3>
+          </div>
+          <span class="text-xs bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded font-mono text-slate-600 dark:text-slate-300">ICT in Bio-Nutrition</span>
+        </div>
+
+        <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+          Modern nutritional research bridges dietary assessment with molecular biology and nutritional genomics (nutrigenomics). The internet provides free, open-access public sequence and composition repositories:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+            <strong class="text-nature-crimson font-bold block mb-1">1. NCBI GenBank (NIH)</strong>
+            <p class="text-slate-600 dark:text-slate-300 mb-2">Comprehensive nucleotide database for analyzing human metabolic genes and dietary enzyme polymorphisms.</p>
+            <span class="font-mono text-[10px] text-slate-400">ncbi.nlm.nih.gov/genbank</span>
+          </div>
+          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+            <strong class="text-nature-crimson font-bold block mb-1">2. UniProt Knowledgebase</strong>
+            <p class="text-slate-600 dark:text-slate-300 mb-2">Universal protein sequence catalog detailing dietary proteins, ferritin iron storage, and lactase persistence.</p>
+            <span class="font-mono text-[10px] text-slate-400">uniprot.org</span>
+          </div>
+          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+            <strong class="text-nature-crimson font-bold block mb-1">3. USDA FoodData Central</strong>
+            <p class="text-slate-600 dark:text-slate-300 mb-2">Open nutrient profiles, micronutrient assays, and food component databases for dietary intake validation.</p>
+            <span class="font-mono text-[10px] text-slate-400">fdc.nal.usda.gov</span>
+          </div>
+          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+            <strong class="text-nature-crimson font-bold block mb-1">4. Shodhganga & PubMed</strong>
+            <p class="text-slate-600 dark:text-slate-300 mb-2">Indian repository of full-text doctoral theses (INFLIBNET) and worldwide indexed biomedical trial literature.</p>
+            <span class="font-mono text-[10px] text-slate-400">shodhganga.inflibnet.ac.in</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= UNIT 2: RESEARCH METHODS & DESIGN ================= -->
+  <section id="unit-2" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#090e17]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-10">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-nature-crimson">Syllabus Unit 2</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white mt-1">
+          Research Methodology, Study Design & Hypothesis Testing
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
+          Complete syllabus coverage from pp. 65–95: Meaning and types of research, identification of problem, features of good design, concepts of variables, experimental vs control groups, hypothesis testing errors, and scientific reporting.
+        </p>
+      </div>
+
+      <!-- Types of Research Taxonomy (From Book pp. 66–70) -->
+      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-6 shadow-sm mb-10">
+        <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white mb-2">
+          Comprehensive Taxonomy of Research Types (Book pp. 66–70)
+        </h3>
+        <p class="text-xs text-slate-500 mb-5">Classification by Objective, Application, Logic, Inquiry, and Nature.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+          
+          <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+            <span class="font-bold text-nature-crimson block mb-1 uppercase text-[10px]">By Objective</span>
+            <p><strong>Descriptive:</strong> Fact-finding without manipulating variables (Ex-post facto, surveys).</p>
+            <p class="mt-1"><strong>Correlational:</strong> Measuring association between variables ($r$).</p>
+            <p class="mt-1"><strong>Explanatory:</strong> Why events happen (cause-effect theories).</p>
+            <p class="mt-1"><strong>Exploratory:</strong> Investigating loosely defined problems to form hypotheses.</p>
+          </div>
+
+          <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+            <span class="font-bold text-nature-crimson block mb-1 uppercase text-[10px]">By Application</span>
+            <p><strong>Basic / Pure / Fundamental:</strong> Advancing core scientific knowledge and theory (e.g. how cellular insulin receptors bind glucose).</p>
+            <p class="mt-2"><strong>Applied Research:</strong> Solving specific immediate real-world dilemmas (e.g. creating fortified sorghum flour for school lunches).</p>
+          </div>
+
+          <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+            <span class="font-bold text-nature-crimson block mb-1 uppercase text-[10px]">By Logic Process</span>
+            <p><strong>Deductive (Top-Down):</strong> Theory $\to$ Hypothesis $\to$ Observation $\to$ Confirmation (Quantitative paradigm).</p>
+            <p class="mt-2"><strong>Inductive (Bottom-Up):</strong> Observation $\to$ Pattern $\to$ Tentative Hypothesis $\to$ General Theory (Qualitative paradigm).</p>
+          </div>
+
+          <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+            <span class="font-bold text-nature-crimson block mb-1 uppercase text-[10px]">By Inquiry & Nature</span>
+            <p><strong>Action Research (Kurt Lewin):</strong> Immediate localized intervention to diagnose and solve practical operational problems.</p>
+            <p class="mt-2"><strong>Empirical vs Conceptual:</strong> Direct observational data verification vs philosophical re-interpretation of ideas.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Variables, Experimental Design & Hypothesis Testing -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+        
+        <!-- Concept of Variables & Experimental vs Control -->
+        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-5 shadow-sm space-y-3">
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+            <i data-lucide="git-commit" class="w-4 h-4 text-nature-crimson"></i>
+            Features of Good Design & Concepts of Variables
+          </h3>
+          
+          <div class="space-y-2 text-xs">
+            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800">
+              <strong class="text-nature-crimson">Independent Variable (IV):</strong> The active factor manipulated by researcher (e.g. giving 500 mg Vitamin C vs Placebo).
+            </div>
+            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800">
+              <strong class="text-blue-600 dark:text-blue-400">Dependent Variable (DV):</strong> The outcome measured that changes in response to the IV (e.g. serum ferritin concentration).
+            </div>
+            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800">
+              <strong class="text-amber-600 dark:text-amber-400">Experimental vs Control Group:</strong> The experimental group receives the novel treatment; the control group receives identical baseline conditions (or placebo) to serve as a counterfactual reference.
+            </div>
+            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800">
+              <strong class="text-purple-600 dark:text-purple-400">Features of Good Design:</strong> Minimizes bias, maximizes experimental variance, controls extraneous variables (via randomization, blinding, matching), and exhibits high internal and external validity.
+            </div>
+          </div>
+        </div>
+
+        <!-- Hypothesis Testing & Errors in Hypothesis (Type I vs Type II) -->
+        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-5 shadow-sm space-y-3">
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>
+            Hypothesis Testing & Statistical Errors (Book p. 83)
+          </h3>
+          
+          <div class="overflow-x-auto text-xs">
+            <table class="w-full text-left border border-slate-200 dark:border-slate-700">
+              <thead class="bg-slate-100 dark:bg-slate-800 font-bold">
+                <tr>
+                  <th class="p-2 border">Statistical Decision</th>
+                  <th class="p-2 border text-emerald-700 dark:text-emerald-300">Null Hypothesis ($H_0$) is TRUE</th>
+                  <th class="p-2 border text-nature-crimson">Null Hypothesis ($H_0$) is FALSE</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                <tr>
+                  <td class="p-2 border font-semibold">Reject $H_0$</td>
+                  <td class="p-2 border bg-red-50 dark:bg-red-950/40 text-nature-crimson font-bold">
+                    TYPE I ERROR ($\alpha$)<br/>
+                    <span class="font-normal text-[11px] text-slate-600 dark:text-slate-300">False positive: claiming a diet worked when it actually had no effect.</span>
+                  </td>
+                  <td class="p-2 border bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 font-bold">
+                    CORRECT DECISION<br/>
+                    <span class="font-normal text-[11px] text-slate-600 dark:text-slate-300">Statistical Power ($1 - \beta$).</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-2 border font-semibold">Fail to Reject $H_0$</td>
+                  <td class="p-2 border bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 font-bold">
+                    CORRECT DECISION<br/>
+                    <span class="font-normal text-[11px] text-slate-600 dark:text-slate-300">True negative ($1 - \alpha$).</span>
+                  </td>
+                  <td class="p-2 border bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 font-bold">
+                    TYPE II ERROR ($\beta$)<br/>
+                    <span class="font-normal text-[11px] text-slate-600 dark:text-slate-300">False negative: missing a real dietary effect due to small sample size.</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="text-[11px] text-slate-500 pt-1">
+            Standard convention: $\alpha$ is set at $0.05$ ($5\%$ chance of false positive); Power ($1-\beta$) is set at $\ge 0.80$ ($80\%$).
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Reporting, Thesis Structure & Ethics (Book pp. 89–95) -->
+      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-6 shadow-sm">
+        <div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-100 dark:border-slate-800">
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">
+            Reporting: Thesis Writing Format & Scientific Ethics (Book pp. 89–95)
+          </h3>
+          <span class="font-mono text-xs text-nature-crimson font-bold">Front Matter • Body • End Matter</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+            <strong class="text-nature-crimson block mb-1">1. Front Matter</strong>
+            <p class="text-slate-600 dark:text-slate-300">Title page, candidate declaration, supervisor certificate, acknowledgements, abstract (100–150 words), table of contents, list of tables, and list of figures.</p>
+          </div>
+          <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+            <strong class="text-nature-crimson block mb-1">2. Body of Thesis</strong>
+            <p class="text-slate-600 dark:text-slate-300">Introduction & problem justification, exhaustive literature review, detailed methodology (SOPs, sample size, instruments), factual results with tables, and thorough discussion of limitations.</p>
+          </div>
+          <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+            <strong class="text-nature-crimson block mb-1">3. End Matter & Ethics</strong>
+            <p class="text-slate-600 dark:text-slate-300">Alphabetical references (Vancouver/APA format), questionnaires/schedules, raw codebooks, and Institutional Ethics Committee (IEC) consent approval documents.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= COCHRAN'S SAMPLE SIZE CALCULATOR (STEP-BY-STEP ARITHMETIC) ================= -->
+  <section id="cochran-calculator" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-8">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-nature-crimson">Practical Calculation</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white mt-1">
+          Survey Sample Sizing: Step-by-Step Cochran Formula
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
+          <strong>The Student Problem:</strong> Suppose you want to survey your college to determine <em>"What percentage of hostel girls have anemia?"</em>. There are 3,000 girls in the college. You cannot draw blood from all 3,000 students! How many girls should you randomly test so your thesis supervisor and examiner will accept your findings as scientifically valid?
+        </p>
+      </div>
+
+      <!-- Presets and Calculator Container -->
+      <div class="rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-900 text-white p-6 sm:p-8 shadow-lg">
+        
+        <!-- Preset Scenario Buttons -->
+        <div class="mb-6 pb-4 border-b border-slate-800">
+          <span class="text-xs font-bold text-red-400 block mb-2 flex items-center gap-1.5 font-mono">
+            <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+            Click a Student Scenario to Automatically Load Parameters:
+          </span>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+            <button onclick="applyCalcPreset('anemia')" id="preset-anemia" 
+              class="calc-preset-btn p-2.5 rounded border border-nature-crimson bg-nature-crimson text-left font-sans">
+              <strong class="block text-white">1. College Anemia Survey</strong>
+              <span class="text-[11px] text-red-100">Past data says ~30% are anemic</span>
+            </button>
+            <button onclick="applyCalcPreset('breakfast')" id="preset-breakfast" 
+              class="calc-preset-btn p-2.5 rounded border border-slate-700 bg-slate-800 text-left font-sans hover:bg-slate-700 transition">
+              <strong class="block text-white">2. Breakfast Skipping (Unknown)</strong>
+              <span class="text-[11px] text-slate-300">No clue? Always pick 50% for safety!</span>
+            </button>
+            <button onclick="applyCalcPreset('celiac')" id="preset-celiac" 
+              class="calc-preset-btn p-2.5 rounded border border-slate-700 bg-slate-800 text-left font-sans hover:bg-slate-700 transition">
+              <strong class="block text-white">3. Rare Gluten Allergy</strong>
+              <span class="text-[11px] text-slate-300">Rare (~5%), need tighter ±2% error</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Sliders -->
+          <div class="lg:col-span-7 space-y-4 text-xs font-sans">
+            
+            <div class="p-3 rounded bg-slate-800/80 border border-slate-700">
+              <div class="flex justify-between font-semibold mb-1">
+                <span class="text-red-300 font-bold">Confidence Level (Z-score):</span>
+                <span id="calc-z-display" class="font-mono text-red-400 font-bold">95% (Z = 1.960)</span>
+              </div>
+              <input type="range" id="calc-z" min="1" max="3" step="1" value="2" 
+                class="w-full accent-nature-crimson cursor-pointer" oninput="updateSampleSizeCalc()">
+              <p class="text-[11px] text-slate-400 mt-1">
+                <strong>Plain English Meaning:</strong> How sure do you want to be that this isn't accidental luck? In medical science, <strong>95% sure (Z = 1.96)</strong> is universal.
+              </p>
+            </div>
+
+            <div class="p-3 rounded bg-slate-800/80 border border-slate-700">
+              <div class="flex justify-between font-semibold mb-1">
+                <span class="text-red-300 font-bold">Expected Prevalence (p):</span>
+                <span id="calc-p-display" class="font-mono text-red-400 font-bold">30% (0.30)</span>
+              </div>
+              <input type="range" id="calc-p" min="0.05" max="0.95" step="0.05" value="0.30" 
+                class="w-full accent-nature-crimson cursor-pointer" oninput="updateSampleSizeCalc()">
+              <p class="text-[11px] text-slate-400 mt-1">
+                <strong>Plain English Meaning:</strong> What % of people do you guess have this condition before you begin? If unknown, choose 50% for maximum variance safety!
+              </p>
+            </div>
+
+            <div class="p-3 rounded bg-slate-800/80 border border-slate-700">
+              <div class="flex justify-between font-semibold mb-1">
+                <span class="text-red-300 font-bold">Margin of Error / Precision (d):</span>
+                <span id="calc-d-display" class="font-mono text-red-400 font-bold">±5% (0.05)</span>
+              </div>
+              <input type="range" id="calc-d" min="0.01" max="0.10" step="0.01" value="0.05" 
+                class="w-full accent-nature-crimson cursor-pointer" oninput="updateSampleSizeCalc()">
+              <p class="text-[11px] text-slate-400 mt-1">
+                <strong>Plain English Meaning:</strong> Acceptable tolerance. With $\pm 5\%$, an observed 30% rate means the real population value is between <strong>25% and 35%</strong>.
+              </p>
+            </div>
+
+            <div class="p-3 rounded bg-slate-800/80 border border-slate-700">
+              <div class="flex justify-between font-semibold mb-1">
+                <span class="text-red-300 font-bold">Non-Response Dropout (% Buffer):</span>
+                <span id="calc-loss-display" class="font-mono text-red-400 font-bold">10%</span>
+              </div>
+              <input type="range" id="calc-loss" min="0" max="30" step="5" value="10" 
+                class="w-full accent-nature-crimson cursor-pointer" oninput="updateSampleSizeCalc()">
+              <p class="text-[11px] text-slate-400 mt-1">
+                <strong>Plain English Meaning:</strong> Some students will be absent or decline. Inviting 10% extra guarantees you obtain your target completed sample!
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Computed Step-by-Step Box -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <div class="rounded-lg bg-slate-800 p-5 text-center border border-slate-700">
+              <span class="text-xs uppercase font-mono tracking-widest text-slate-400 block mb-1">
+                Minimum Completed Sample Required
+              </span>
+              <div id="calc-result-n" class="text-5xl font-extrabold text-nature-crimson font-mono my-1">323</div>
+              <span class="text-xs text-slate-300 block mb-3 font-medium">Completed participants needed</span>
+              <div class="pt-3 border-t border-slate-700 flex justify-between items-center text-xs">
+                <span class="text-slate-400">With <span id="calc-loss-sub">10%</span> dropout buffer:</span>
+                <span id="calc-result-invite" class="font-mono font-bold text-emerald-400 text-lg">≈ 359 to invite</span>
+              </div>
+            </div>
+
+            <!-- Step-by-Step Arithmetic Substitution Box -->
+            <div class="rounded-lg bg-black/50 border border-slate-800 p-4 font-mono text-xs">
+              <span class="text-[10px] uppercase text-nature-crimson font-bold block mb-2 font-sans flex items-center gap-1.5">
+                <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+                Live Step-by-Step Mathematical Substitution:
+              </span>
+              <div class="space-y-1.5 text-slate-300 text-[11px]">
+                <div><span class="text-slate-400">Step 1 (Numerator):</span> <span id="math-top">1.96² × 0.30 × 0.70 = 0.8067</span></div>
+                <div><span class="text-slate-400">Step 2 (Denominator):</span> <span id="math-bottom">0.05² = 0.0025</span></div>
+                <div><span class="text-slate-400">Step 3 (Divide):</span> <span id="math-divide">0.8067 ÷ 0.0025 = 322.7 ➔ 323</span></div>
+                <div class="pt-1.5 border-t border-slate-800 text-emerald-400"><span class="text-slate-400">Step 4 (Add Buffer):</span> <span id="math-buffer">323 ÷ 0.90 = 359 students</span></div>
+              </div>
+            </div>
+
+            <!-- Viva Ready Sentence -->
+            <div class="p-3.5 rounded bg-slate-800/90 border border-slate-700 text-xs">
+              <strong class="text-red-300 block mb-1 text-[11px] font-sans flex items-center gap-1">
+                <i data-lucide="feather" class="w-3.5 h-3.5 text-nature-crimson"></i>
+                Nature Portfolio / Thesis Standard Formulation:
+              </strong>
+              <p id="calc-thesis-text" class="text-slate-300 italic font-serif text-[11px] leading-relaxed">
+                "To estimate an expected 30% anemia prevalence with 95% confidence (Z = 1.96) and a 5% margin of precision, Cochran's formula yielded a minimum required sample of n = 323. Inflating for 10% anticipated non-response, a total of 359 students were invited."
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= EXAM GLOSSARY & REVISION ================= -->
+  <section id="exam-glossary" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#090e17]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <div>
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-nature-crimson">Mastery Index</span>
+          <h2 class="text-2xl font-serif font-bold text-slate-900 dark:text-white mt-0.5">
+            Key Terminologies & Viva Quick Reference
+          </h2>
+        </div>
+        <div class="relative w-full sm:w-64">
+          <input type="text" id="abbreviation-search" placeholder="Filter terms (e.g. t-test, ANOVA)..." 
+            oninput="filterAbbreviations()"
+            class="w-full text-xs bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg pl-9 pr-3 py-2 focus:ring-2 focus:ring-nature-crimson focus:outline-none shadow-sm">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+        </div>
+      </div>
+
+      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] overflow-hidden shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs" id="abbreviations-table">
+            <thead class="bg-slate-100 dark:bg-slate-800/80 font-bold text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
+              <tr>
+                <th class="py-2.5 px-4 w-36">Term / Acronym</th>
+                <th class="py-2.5 px-4">Formal Definition (Book pp. 65–95)</th>
+                <th class="py-2.5 px-4">Applied Nutritional Context</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-800" id="abbreviations-body">
+              <tr>
+                <td class="py-2.5 px-4 font-mono font-bold text-nature-crimson">ANOVA</td>
+                <td class="py-2.5 px-4 text-slate-800 dark:text-slate-200">Analysis of Variance: Compares variation between groups vs within groups across ≥3 treatment arms.</td>
+                <td class="py-2.5 px-4 text-slate-600 dark:text-slate-300">Comparing calcium absorption across Dairy, Soya, and Calcium Supplement groups.</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-4 font-mono font-bold text-nature-crimson">Chi-Square (χ²)</td>
+                <td class="py-2.5 px-4 text-slate-800 dark:text-slate-200">Non-parametric test comparing observed frequencies ($O$) with expected frequencies ($E$).</td>
+                <td class="py-2.5 px-4 text-slate-600 dark:text-slate-300">Testing association between Vitamin A deficiency (Yes/No) and Bitot's spots (Yes/No).</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-4 font-mono font-bold text-nature-crimson">Type I Error (α)</td>
+                <td class="py-2.5 px-4 text-slate-800 dark:text-slate-200">Rejecting a true null hypothesis (false positive). Typically set at $\alpha = 0.05$.</td>
+                <td class="py-2.5 px-4 text-slate-600 dark:text-slate-300">Claiming an herbal tea lowers cholesterol when in reality it had no true effect.</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-4 font-mono font-bold text-nature-crimson">Type II Error (β)</td>
+                <td class="py-2.5 px-4 text-slate-800 dark:text-slate-200">Failing to reject a false null hypothesis (false negative). Governed by statistical power ($1-\beta$).</td>
+                <td class="py-2.5 px-4 text-slate-600 dark:text-slate-300">Missing a genuine blood pressure reduction from salt cutting due to a tiny sample size ($n=6$).</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-4 font-mono font-bold text-nature-crimson">Standard Deviation (σ)</td>
+                <td class="py-2.5 px-4 text-slate-800 dark:text-slate-200">Square root of variance: $\sqrt{\sum(x-\bar{x})^2 / (n-1)}$. Measures typical distance from mean.</td>
+                <td class="py-2.5 px-4 text-slate-600 dark:text-slate-300">Quantifying variability in calorie intake across a hostel student cohort.</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-4 font-mono font-bold text-nature-crimson">Action Research</td>
+                <td class="py-2.5 px-4 text-slate-800 dark:text-slate-200">Coined by Kurt Lewin (1940); cyclical intervention to diagnose and solve immediate situational problems.</td>
+                <td class="py-2.5 px-4 text-slate-600 dark:text-slate-300">Improving canteen vegetable hygiene practices after a localized food poisoning incident.</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-4 font-mono font-bold text-nature-crimson">Positivism</td>
+                <td class="py-2.5 px-4 text-slate-800 dark:text-slate-200">Founded by Auguste Comte (Father of Positivism); knowledge must be verifiable via empirical observation.</td>
+                <td class="py-2.5 px-4 text-slate-600 dark:text-slate-300">Insisting on biochemical assays rather than subjective self-reported health feelings.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= NATURE FOOTER ================= -->
+  <footer class="py-8 bg-white dark:bg-[#0c121e] border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="font-serif font-bold text-slate-900 dark:text-white text-sm">nature <span class="text-nature-crimson font-sans">biostatistics</span></span>
+        <p class="text-[11px] text-slate-400 mt-0.5">Gujarat University • M.Sc Food Science & Nutrition • Semester 3</p>
+      </div>
+      <div class="flex items-center gap-4 text-[11px]">
+        <span>Syllabus: Units 1 & 2 Completed</span>
+        <span>•</span>
+        <a href="#top" class="hover:text-nature-crimson transition font-semibold">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ================= QUIZ MODAL ================= -->
+  <div id="quiz-modal" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#0f172a] rounded-xl max-w-lg w-full border border-slate-200 dark:border-slate-700 shadow-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+      <button onclick="toggleQuizModal()" class="absolute top-4 right-4 p-1.5 rounded text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-8 h-8 rounded bg-red-100 text-nature-crimson flex items-center justify-center font-bold">
+          <i data-lucide="award" class="w-4 h-4"></i>
+        </div>
+        <div>
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">Unit 1 & 2 Examination Practice</h3>
+          <span class="text-xs text-slate-500">Self-Test Assessment</span>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+          <p class="font-bold mb-2 text-slate-900 dark:text-white">1. Which test evaluates the association between two categorical variables (e.g. Anemia: Yes/No vs Residence: Rural/Urban)?</p>
+          <div class="space-y-1">
+            <button onclick="checkAnswer(this, false, 'q1-exp')" class="w-full text-left p-2 rounded bg-white dark:bg-slate-900 border hover:bg-slate-100">A. Student's Paired t-Test</button>
+            <button onclick="checkAnswer(this, true, 'q1-exp')" class="w-full text-left p-2 rounded bg-white dark:bg-slate-900 border hover:bg-slate-100">B. Pearson's Chi-Square (χ²) Test of Independence</button>
+            <button onclick="checkAnswer(this, false, 'q1-exp')" class="w-full text-left p-2 rounded bg-white dark:bg-slate-900 border hover:bg-slate-100">C. Simple Linear Regression</button>
+          </div>
+          <div id="q1-exp" class="hidden mt-2 p-2 rounded bg-emerald-50 text-emerald-800 font-medium">Correct! Chi-Square compares observed counts against expected counts in contingency tables.</div>
+        </div>
+
+        <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+          <p class="font-bold mb-2 text-slate-900 dark:text-white">2. Who coined the term 'Action Research' in 1940?</p>
+          <div class="space-y-1">
+            <button onclick="checkAnswer(this, false, 'q2-exp')" class="w-full text-left p-2 rounded bg-white dark:bg-slate-900 border hover:bg-slate-100">A. Auguste Comte</button>
+            <button onclick="checkAnswer(this, true, 'q2-exp')" class="w-full text-left p-2 rounded bg-white dark:bg-slate-900 border hover:bg-slate-100">B. Kurt Lewin</button>
+            <button onclick="checkAnswer(this, false, 'q2-exp')" class="w-full text-left p-2 rounded bg-white dark:bg-slate-900 border hover:bg-slate-100">C. John Creswell</button>
+          </div>
+          <div id="q2-exp" class="hidden mt-2 p-2 rounded bg-emerald-50 text-emerald-800 font-medium">Correct! German-American social psychologist Kurt Lewin coined Action Research in 1940 (Book p. 75).</div>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+        <button onclick="toggleQuizModal()" class="px-4 py-1.5 rounded bg-nature-crimson text-white font-medium text-xs">Done Reviewing</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    lucide.createIcons();
+
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
+      updateAllCharts();
+    });
+
+    function toggleQuizModal() {
+      document.getElementById('quiz-modal').classList.toggle('hidden');
+    }
+    function checkAnswer(btn, isCorrect, expId) {
+      const parent = btn.parentElement;
+      parent.querySelectorAll('button').forEach(b => b.disabled = true);
+      if (isCorrect) {
+        btn.classList.add('bg-emerald-100', 'text-emerald-800', 'border-emerald-500', 'font-bold');
+      } else {
+        btn.classList.add('bg-red-100', 'text-nature-crimson', 'border-red-500');
+      }
+      document.getElementById(expId).classList.remove('hidden');
+    }
+
+    // ================= STATISTICAL TOOL LAB DEFINITIONS (7 TOOLS) =================
+    const labTools = {
+      1: {
+        category: "UNIT 1: ANALYSIS OF DATA • MEASURES OF CENTRAL TENDENCY & DISPERSION",
+        question: "Analyzing daily dietary protein intake (g/day) distribution across 12 university athletes.",
+        scale: "Continuous Ratio Scale",
+        columns: ["Athlete ID", "Sport Event", "Protein Intake (g/day)", "Deviation (x - x̄)"],
+        rows: [
+          ["ATH_01", "Rowing", "65.0 g", "-19.5 g"],
+          ["ATH_02", "Swimming", "72.0 g", "-12.5 g"],
+          ["ATH_03", "Athletics", "75.0 g", "-9.5 g"],
+          ["ATH_04", "Cycling", "80.0 g", "-4.5 g"],
+          ["ATH_05", "Football", "80.0 g", "-4.5 g"],
+          ["ATH_06", "Gymnastics", "82.0 g", "-2.5 g"],
+          ["ATH_07", "Tennis", "85.0 g", "+0.5 g"],
+          ["ATH_08", "Basketball", "88.0 g", "+3.5 g"]
+        ],
+        chartCaption: "Protein Intake Frequency Distribution (g/day)",
+        chartType: 'bar',
+        chartData: {
+          labels: ['60-69g', '70-79g', '80-89g', '90-99g', '100-110g'],
+          datasets: [{
+            label: 'Athlete Frequency',
+            data: [1, 2, 5, 3, 1],
+            backgroundColor: 'rgba(199, 0, 0, 0.75)',
+            borderColor: 'rgba(199, 0, 0, 1)',
+            borderWidth: 1.5,
+            borderRadius: 4
+          }]
+        },
+        chartYTitle: "Number of Athletes",
+        methodTitle: "Measures of Central Tendency & Dispersion",
+        methodRationale: "Why this method: For continuous numerical data, reporting Mean, Median, and Standard Deviation describes where the distribution centers and how widely observations scatter.",
+        metrics: [
+          { label: "Arithmetic Mean", val: "84.5 g" },
+          { label: "Median", val: "83.5 g" },
+          { label: "Mode", val: "80.0 g" },
+          { label: "Std Deviation (σ)", val: "11.8 g" },
+          { label: "Total Range", val: "45.0 g" },
+          { label: "Mean Deviation", val: "9.2 g" },
+          { label: "Skewness", val: "+0.25 (Mild)" },
+          { label: "Sample Size", val: "n = 12" }
+        ],
+        plainInterp: "Mean (84.5 g) and Median (83.5 g) are nearly identical, confirming the protein intake data is evenly distributed without severe distortion. The standard deviation of 11.8 g indicates healthy, normal variation among athletes.",
+        thesisSentence: "\"Daily protein intake in the athletic cohort averaged 84.5 ± 11.8 g/day (Median = 83.5 g, IQR = 77.5–91.0 g, Range = 65–110 g; n = 12), exhibiting normal distributional symmetry verified via Shapiro–Wilk testing (p = 0.42).\""
+      },
+
+      2: {
+        category: "UNIT 1 & 2: TESTS OF SIGNIFICANCE • TWO INDEPENDENT SAMPLES",
+        question: "Comparing endline Hemoglobin (Hb, g/dL) between Iron-Fortified Flour vs Control Flour after 12 weeks.",
+        scale: "Independent Ratio Scale",
+        columns: ["Participant ID", "Study Arm", "Endline Hb (g/dL)", "Clinical Classification"],
+        rows: [
+          ["P_101", "Iron-Fortified", "12.8 g/dL", "Normal"],
+          ["P_102", "Control Usual", "10.8 g/dL", "Mild Anemia"],
+          ["P_103", "Iron-Fortified", "13.1 g/dL", "Normal"],
+          ["P_104", "Control Usual", "11.2 g/dL", "Mild Anemia"],
+          ["P_105", "Iron-Fortified", "12.5 g/dL", "Normal"],
+          ["P_106", "Control Usual", "10.9 g/dL", "Mild Anemia"],
+          ["P_107", "Iron-Fortified", "13.4 g/dL", "Normal"],
+          ["P_108", "Control Usual", "11.5 g/dL", "Normal"]
+        ],
+        chartCaption: "Mean Hemoglobin (Hb) by Treatment Arm (g/dL)",
+        chartType: 'bar',
+        chartData: {
+          labels: ['Control Flour (n=10)', 'Iron-Fortified Flour (n=10)'],
+          datasets: [{
+            label: 'Mean Hb (g/dL)',
+            data: [11.1, 12.8],
+            backgroundColor: ['rgba(100, 116, 139, 0.7)', 'rgba(199, 0, 0, 0.85)'],
+            borderColor: ['rgba(100, 116, 139, 1)', 'rgba(199, 0, 0, 1)'],
+            borderWidth: 1.5,
+            borderRadius: 4
+          }]
+        },
+        chartYTitle: "Hemoglobin (g/dL)",
+        methodTitle: "Student's Independent Two-Sample 't'-Test",
+        methodRationale: "Why this method: Two independent, non-overlapping groups receiving different interventions are being compared on a continuous outcome variable (Hb in g/dL).",
+        metrics: [
+          { label: "Control Mean", val: "11.1 ± 0.7 g/dL" },
+          { label: "Iron Mean", val: "12.8 ± 0.8 g/dL" },
+          { label: "t-Statistic", val: "t = 3.42" },
+          { label: "Degrees of Freedom", val: "df = 18" },
+          { label: "p-Value", val: "p = 0.003*" },
+          { label: "Mean Difference", val: "+1.7 g/dL" },
+          { label: "95% CI of Diff", val: "[0.66, 2.74]" },
+          { label: "Cohen's d", val: "d = 1.53 (Large)" }
+        ],
+        plainInterp: "Because the calculated p-value (0.003) is far below 0.05, we reject the null hypothesis. The iron-fortified flour produced a statistically significant and large physiological increase of 1.7 g/dL in hemoglobin.",
+        thesisSentence: "\"An independent two-sample t-test revealed that participants receiving iron-fortified flour attained significantly higher endline hemoglobin concentrations (12.8 ± 0.8 g/dL) than those on control flour (11.1 ± 0.7 g/dL), t(18) = 3.42, p = 0.003, Cohen’s d = 1.53, 95% CI [0.66, 2.74].\""
+      },
+
+      3: {
+        category: "UNIT 1 & 2: TESTS OF SIGNIFICANCE • PAIRED DEPENDENT MEASUREMENTS",
+        question: "Evaluating within-subject fasting blood glucose (mg/dL) before and after a 30-day low-glycemic diet.",
+        scale: "Paired Repeated Measures",
+        columns: ["Subject Code", "Pre-Diet Glucose", "Day 30 Glucose", "Net Change (mg/dL)"],
+        rows: [
+          ["SUB_201", "122 mg/dL", "106 mg/dL", "-16 mg/dL"],
+          ["SUB_202", "118 mg/dL", "104 mg/dL", "-14 mg/dL"],
+          ["SUB_203", "128 mg/dL", "111 mg/dL", "-17 mg/dL"],
+          ["SUB_204", "115 mg/dL", "103 mg/dL", "-12 mg/dL"],
+          ["SUB_205", "120 mg/dL", "108 mg/dL", "-12 mg/dL"],
+          ["SUB_206", "125 mg/dL", "110 mg/dL", "-15 mg/dL"],
+          ["SUB_207", "119 mg/dL", "105 mg/dL", "-14 mg/dL"],
+          ["SUB_208", "116 mg/dL", "104 mg/dL", "-12 mg/dL"]
+        ],
+        chartCaption: "Within-Person Blood Glucose Reduction (mg/dL)",
+        chartType: 'bar',
+        chartData: {
+          labels: ['Baseline (Day 0)', 'Post-Intervention (Day 30)'],
+          datasets: [{
+            label: 'Fasting Glucose (mg/dL)',
+            data: [120.4, 106.3],
+            backgroundColor: ['rgba(239, 68, 68, 0.75)', 'rgba(16, 185, 129, 0.85)'],
+            borderRadius: 4
+          }]
+        },
+        chartYTitle: "Glucose (mg/dL)",
+        methodTitle: "Paired Student's 't'-Test (Repeated Measures)",
+        methodRationale: "Why this method: Observations are paired—each subject acts as their own baseline control, removing between-person genetic and demographic variability.",
+        metrics: [
+          { label: "Pre-Diet Mean", val: "120.4 mg/dL" },
+          { label: "Post-Diet Mean", val: "106.3 mg/dL" },
+          { label: "Mean Reduction", val: "-14.1 mg/dL" },
+          { label: "t-Statistic", val: "t = -11.8" },
+          { label: "Degrees of Freedom", val: "df = 9" },
+          { label: "p-Value", val: "p < 0.0001*" },
+          { label: "SD of Change", val: "1.94 mg/dL" },
+          { label: "Significance", val: "Highly Significant" }
+        ],
+        plainInterp: "Every participant experienced a meaningful reduction in blood sugar. The paired t-test yields p < 0.0001, demonstrating that the 30-day low-glycemic diet caused a significant within-subject decrease of 14.1 mg/dL.",
+        thesisSentence: "\"A paired-samples t-test confirmed a statistically significant reduction in fasting blood glucose following the 30-day dietary intervention (Mean drop = -14.1 mg/dL, SD = 1.94), t(9) = -11.8, p < 0.0001, 95% CI [-15.5, -12.7].\""
+      },
+
+      4: {
+        category: "UNIT 1: TESTS OF SIGNIFICANCE • CONTINGENCY TABLES & PROPORTIONS",
+        question: "Testing association between dietary Vitamin A deficiency and clinical Bitot's spots in school children.",
+        scale: "Categorical Nominal Scale",
+        columns: ["Dietary Intake", "Bitot's Spots Present", "Bitot's Spots Absent", "Row Total"],
+        rows: [
+          ["Low Vitamin A (<200 μg/d)", "28 children", "22 children", "50 children"],
+          ["Adequate Vit A (≥400 μg/d)", "6 children", "44 children", "50 children"],
+          ["Column Total", "34 children", "66 children", "N = 100 children"]
+        ],
+        chartCaption: "Bitot's Spots Prevalence by Vitamin A Status (%)",
+        chartType: 'bar',
+        chartData: {
+          labels: ['Low Vitamin A Group', 'Adequate Vitamin A Group'],
+          datasets: [{
+            label: 'Bitot Spots Prevalence (%)',
+            data: [56, 12],
+            backgroundColor: ['rgba(199, 0, 0, 0.85)', 'rgba(16, 185, 129, 0.85)'],
+            borderRadius: 4
+          }]
+        },
+        chartYTitle: "Prevalence (%)",
+        methodTitle: "Pearson's Chi-Square Test of Independence (χ²)",
+        methodRationale: "Why this method: Both variables are categorical frequencies (Diet: Low vs Adequate; Clinical Signs: Present vs Absent). We compare observed counts with expected counts under the null.",
+        metrics: [
+          { label: "Low Vit A Rate", val: "56.0% (28/50)" },
+          { label: "Adequate Rate", val: "12.0% (6/50)" },
+          { label: "Chi-Square (χ²)", val: "χ² = 21.6" },
+          { label: "Degrees of Freedom", val: "df = 1" },
+          { label: "p-Value", val: "p < 0.0001*" },
+          { label: "Odds Ratio (OR)", val: "9.33" },
+          { label: "95% CI of OR", val: "[3.34, 26.1]" },
+          { label: "Decision", val: "Reject H₀" }
+        ],
+        plainInterp: "Children with low dietary Vitamin A have over 9 times higher odds of exhibiting ocular Bitot's spots (56% vs 12%). The Chi-Square test confirms this association is overwhelmingly significant (p < 0.0001).",
+        thesisSentence: "\"A Pearson Chi-Square test of independence demonstrated a highly significant association between dietary Vitamin A deficiency and clinical Bitot’s spots, χ²(1, N = 100) = 21.6, p < 0.0001, Odds Ratio = 9.33 (95% CI [3.34, 26.1]).\""
+      },
+
+      5: {
+        category: "UNIT 1: ANALYSIS OF DATA • BIVARIATE LINEAR CORRELATION",
+        question: "Quantifying the linear correlation between daily dietary sodium intake (g/day) and Systolic Blood Pressure (mmHg).",
+        scale: "Continuous Bivariate",
+        columns: ["Participant ID", "Sodium Intake (g/day)", "Systolic BP (mmHg)", "Z-Sodium", "Z-BP"],
+        rows: [
+          ["P_01", "2.1 g", "118 mmHg", "-1.4", "-1.3"],
+          ["P_02", "2.5 g", "122 mmHg", "-1.0", "-0.9"],
+          ["P_03", "3.0 g", "126 mmHg", "-0.5", "-0.5"],
+          ["P_04", "3.5 g", "130 mmHg", "0.0", "-0.1"],
+          ["P_05", "4.0 g", "136 mmHg", "+0.5", "+0.5"],
+          ["P_06", "4.5 g", "140 mmHg", "+1.0", "+0.9"],
+          ["P_07", "5.0 g", "146 mmHg", "+1.5", "+1.5"],
+          ["P_08", "5.5 g", "150 mmHg", "+2.0", "+1.9"]
+        ],
+        chartCaption: "Systolic Blood Pressure vs Dietary Sodium Intake",
+        chartType: 'line',
+        chartData: {
+          labels: ['2.1g', '2.5g', '3.0g', '3.5g', '4.0g', '4.5g', '5.0g', '5.5g'],
+          datasets: [{
+            label: 'Systolic BP (mmHg)',
+            data: [118, 122, 126, 130, 136, 140, 146, 150],
+            borderColor: '#c70000',
+            backgroundColor: 'rgba(199, 0, 0, 0.1)',
+            fill: true,
+            tension: 0.2
+          }]
+        },
+        chartYTitle: "Systolic BP (mmHg)",
+        methodTitle: "Pearson Product-Moment Correlation Coefficient (r)",
+        methodRationale: "Why this method: Both variables are continuous ratio measures and we wish to evaluate the strength and direction of their linear association without establishing strict causation.",
+        metrics: [
+          { label: "Correlation (r)", val: "r = +0.89" },
+          { label: "Direction", val: "Strong Positive" },
+          { label: "r-Squared (r²)", val: "r² = 0.79" },
+          { label: "t-Statistic", val: "t = 5.51" },
+          { label: "Degrees of Freedom", val: "df = 8" },
+          { label: "p-Value", val: "p < 0.001*" },
+          { label: "Covariance", val: "Cov = +14.2" },
+          { label: "Decision", val: "Significant Link" }
+        ],
+        plainInterp: "There is an extremely strong positive correlation (r = +0.89). Higher daily sodium consumption is directly paired with higher systolic blood pressure. Dietary sodium explains approximately 79% of the variation in blood pressure.",
+        thesisSentence: "\"A Pearson product-moment correlation identified a robust positive association between daily dietary sodium intake and systolic blood pressure, r(8) = 0.89, p < 0.001, with sodium explaining 79.2% of the variance (r² = 0.792).\""
+      },
+
+      6: {
+        category: "UNIT 1: ANALYSIS OF DATA • PREDICTIVE MODELING & REGRESSION",
+        question: "Formulating a simple linear regression equation to predict plasma Vitamin C from daily citrus fruit intake.",
+        scale: "Continuous Dependent & Independent",
+        columns: ["Participant Code", "Citrus Vit C (mg/d)", "Plasma Vit C (μmol/L)", "Fitted Value (ŷ)"],
+        rows: [
+          ["REG_01", "30 mg", "26.0 μmol/L", "26.1 μmol/L"],
+          ["REG_02", "50 mg", "36.5 μmol/L", "36.7 μmol/L"],
+          ["REG_03", "70 mg", "47.0 μmol/L", "47.3 μmol/L"],
+          ["REG_04", "90 mg", "58.0 μmol/L", "57.9 μmol/L"],
+          ["REG_05", "110 mg", "68.5 μmol/L", "68.5 μmol/L"],
+          ["REG_06", "130 mg", "79.0 μmol/L", "79.1 μmol/L"],
+          ["REG_07", "150 mg", "89.5 μmol/L", "89.7 μmol/L"],
+          ["REG_08", "170 mg", "100.0 μmol/L", "100.3 μmol/L"]
+        ],
+        chartCaption: "Regression Fitted Line: Plasma Vitamin C (μmol/L)",
+        chartType: 'line',
+        chartData: {
+          labels: ['30mg', '50mg', '70mg', '90mg', '110mg', '130mg', '150mg', '170mg'],
+          datasets: [{
+            label: 'Observed Plasma Level',
+            data: [26.0, 36.5, 47.0, 58.0, 68.5, 79.0, 89.5, 100.0],
+            borderColor: '#0f172a',
+            backgroundColor: '#0f172a',
+            showLine: false,
+            pointRadius: 5
+          }, {
+            label: 'Fitted Model (ŷ = 0.53x + 10.2)',
+            data: [26.1, 36.7, 47.3, 57.9, 68.5, 79.1, 89.7, 100.3],
+            borderColor: '#c70000',
+            borderWidth: 2,
+            pointRadius: 0
+          }]
+        },
+        chartYTitle: "Plasma (μmol/L)",
+        methodTitle: "Simple Linear Regression (y = mx + c)",
+        methodRationale: "Why this method: Used to quantify the exact mathematical relationship between an independent dietary predictor (Citrus mg) and a physiological outcome (Plasma $\\mu$mol/L).",
+        metrics: [
+          { label: "Equation", val: "ŷ = 0.53x + 10.2" },
+          { label: "Slope (β₁)", val: "0.53" },
+          { label: "Intercept (β₀)", val: "10.2 μmol/L" },
+          { label: "R-Squared (R²)", val: "0.998" },
+          { label: "F-Statistic", val: "F = 3,420" },
+          { label: "Model p-Value", val: "p < 0.0001*" },
+          { label: "Std Error", val: "0.32 μmol/L" },
+          { label: "Prediction", val: "+5.3 μmol/10mg" }
+        ],
+        plainInterp: "The regression model is exceptionally precise ($R^2 = 0.998$). For every additional 10 mg of dietary Vitamin C consumed from fruit, plasma ascorbic acid increases by 5.3 μmol/L above a basal level of 10.2 μmol/L.",
+        thesisSentence: "\"Simple linear regression demonstrated that dietary fruit Vitamin C intake significantly predicted plasma ascorbic acid concentration, β = 0.53, t = 58.5, p < 0.0001. The model accounted for 99.8% of variance in plasma levels (R² = 0.998, F(1,6) = 3420, p < 0.0001).\""
+      },
+
+      7: {
+        category: "UNIT 1 & 2: MULTI-GROUP ANALYSIS • VARIANCE BETWEEN VS WITHIN",
+        question: "Comparing serum calcium levels (mg/dL) across 3 dietary groups: Dairy Diet, Fortified Soya, and Calcium Supplement.",
+        scale: "Continuous Across 3 Groups",
+        columns: ["Subject Code", "Dietary Group", "Serum Calcium (mg/dL)", "Deviation from Grand Mean"],
+        rows: [
+          ["CAL_01", "Dairy Intake", "9.8 mg/dL", "+0.4 mg/dL"],
+          ["CAL_02", "Dairy Intake", "10.1 mg/dL", "+0.7 mg/dL"],
+          ["CAL_03", "Fortified Soya", "9.3 mg/dL", "-0.1 mg/dL"],
+          ["CAL_04", "Fortified Soya", "9.4 mg/dL", "0.0 mg/dL"],
+          ["CAL_05", "Supplement", "9.6 mg/dL", "+0.2 mg/dL"],
+          ["CAL_06", "Supplement", "9.7 mg/dL", "+0.3 mg/dL"],
+          ["CAL_07", "Dairy Intake", "9.9 mg/dL", "+0.5 mg/dL"],
+          ["CAL_08", "Fortified Soya", "9.1 mg/dL", "-0.3 mg/dL"]
+        ],
+        chartCaption: "Mean Serum Calcium by Dietary Source (mg/dL)",
+        chartType: 'bar',
+        chartData: {
+          labels: ['Dairy Diet (n=8)', 'Fortified Soya (n=8)', 'Calcium Supplement (n=8)'],
+          datasets: [{
+            label: 'Serum Calcium (mg/dL)',
+            data: [9.9, 9.2, 9.7],
+            backgroundColor: ['rgba(199, 0, 0, 0.8)', 'rgba(100, 116, 139, 0.8)', 'rgba(180, 83, 9, 0.8)'],
+            borderRadius: 4
+          }]
+        },
+        chartYTitle: "Calcium (mg/dL)",
+        methodTitle: "One-Way Analysis of Variance (ANOVA)",
+        methodRationale: "Why this method: Comparing 3 groups simultaneously. Running three separate t-tests would inflate Type I error; ANOVA evaluates overall between-group variance against within-group variance.",
+        metrics: [
+          { label: "Dairy Mean", val: "9.9 ± 0.3 mg/dL" },
+          { label: "Soya Mean", val: "9.2 ± 0.2 mg/dL" },
+          { label: "Supp Mean", val: "9.7 ± 0.3 mg/dL" },
+          { label: "F-Statistic", val: "F = 14.2" },
+          { label: "df (Between, Within)", val: "df = (2, 21)" },
+          { label: "p-Value", val: "p = 0.0001*" },
+          { label: "Post-Hoc Tukey", val: "Dairy > Soya (p < 0.01)" },
+          { label: "Eta-Squared (η²)", val: "η² = 0.57 (Large)" }
+        ],
+        plainInterp: "The overall ANOVA is statistically significant (F = 14.2, p = 0.0001). Post-hoc testing proves Dairy and Supplement arms both produced significantly higher serum calcium than Fortified Soya, while Dairy and Supplement did not differ significantly.",
+        thesisSentence: "\"A one-way ANOVA demonstrated significant differences in serum calcium concentrations across the three dietary interventions, F(2, 21) = 14.2, p = 0.0001, η² = 0.57. Tukey HSD post-hoc comparisons showed Dairy (9.9 ± 0.3 mg/dL) and Supplement (9.7 ± 0.3 mg/dL) both elicited significantly greater serum calcium than Fortified Soya (9.2 ± 0.2 mg/dL, p < 0.01).\""
+      }
+    };
+
+    let labChartInstance = null;
+
+    function switchLabTool(id) {
+      document.querySelectorAll('.tool-btn').forEach((btn, idx) => {
+        if (idx + 1 === id) {
+          btn.classList.add('tool-btn-active');
+        } else {
+          btn.classList.remove('tool-btn-active');
+        }
+      });
+
+      const data = labTools[id];
+      document.getElementById('lab-tool-category').innerText = data.category;
+      document.getElementById('lab-research-question').innerText = data.question;
+      document.getElementById('lab-scale-badge').innerText = data.scale;
+      document.getElementById('lab-applied-method').innerText = data.methodTitle;
+      document.getElementById('lab-method-rationale').innerText = data.methodRationale;
+      document.getElementById('lab-plain-interpretation').innerText = data.plainInterp;
+      document.getElementById('lab-thesis-sentence').innerText = data.thesisSentence;
+      document.getElementById('lab-chart-caption').innerText = data.chartCaption;
+
+      // Populate Table
+      const table = document.getElementById('lab-dataset-table');
+      let html = `<thead class="bg-slate-50 dark:bg-slate-800 uppercase font-bold text-slate-500 border-b border-slate-200 dark:border-slate-700"><tr>`;
+      data.columns.forEach(col => { html += `<th class="py-2 px-3">${col}</th>`; });
+      html += `</tr></thead><tbody class="divide-y divide-slate-100 dark:divide-slate-800">`;
+      data.rows.forEach(r => {
+        html += `<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30">`;
+        r.forEach((cell, cIdx) => {
+          const fontCls = cIdx === 0 ? "font-mono text-slate-400" : "font-semibold text-slate-800 dark:text-slate-200";
+          html += `<td class="py-2 px-3 ${fontCls}">${cell}</td>`;
+        });
+        html += `</tr>`;
+      });
+      html += `</tbody>`;
+      table.innerHTML = html;
+
+      // Populate Metrics
+      const metricsContainer = document.getElementById('lab-metrics-container');
+      let mHtml = '';
+      data.metrics.forEach(m => {
+        mHtml += `
+          <div class="p-2 rounded bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+            <span class="text-[10px] text-slate-400 block">${m.label}</span>
+            <strong class="text-xs font-mono font-bold text-nature-crimson dark:text-red-400">${m.val}</strong>
+          </div>
+        `;
+      });
+      metricsContainer.innerHTML = mHtml;
+
+      // Render Dynamic Chart
+      renderLabChart(data);
+    }
+
+    function renderLabChart(data) {
+      if (labChartInstance) {
+        labChartInstance.destroy();
+      }
+      const isDark = document.documentElement.classList.contains('dark');
+      const textColor = isDark ? '#94a3b8' : '#64748b';
+      const gridColor = isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)';
+
+      const ctx = document.getElementById('labDynamicChart').getContext('2d');
+      labChartInstance = new Chart(ctx, {
+        type: data.chartType,
+        data: data.chartData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: data.chartType === 'line' } },
+          scales: {
+            y: {
+              beginAtZero: false,
+              title: { display: true, text: data.chartYTitle, color: textColor, font: { size: 10 } },
+              ticks: { color: textColor, font: { size: 10 } },
+              grid: { color: gridColor }
+            },
+            x: {
+              ticks: { color: textColor, font: { size: 10 } },
+              grid: { display: false }
+            }
+          }
+        }
+      });
+    }
+
+    // Live Search Filter for Abbreviations
+    function filterAbbreviations() {
+      const query = document.getElementById('abbreviation-search').value.toLowerCase();
+      document.querySelectorAll('#abbreviations-body tr').forEach(row => {
+        row.style.display = row.innerText.toLowerCase().includes(query) ? '' : 'none';
+      });
+    }
+
+    // Sample Size Presets & Calculator
+    function applyCalcPreset(preset) {
+      document.querySelectorAll('.calc-preset-btn').forEach(b => {
+        b.classList.remove('border-nature-crimson', 'bg-nature-crimson');
+        b.classList.add('border-slate-700', 'bg-slate-800');
+      });
+      const activeBtn = document.getElementById(`preset-${preset}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-slate-700', 'bg-slate-800');
+        activeBtn.classList.add('border-nature-crimson', 'bg-nature-crimson');
+      }
+
+      if (preset === 'anemia') {
+        document.getElementById('calc-z').value = 2; // 95%
+        document.getElementById('calc-p').value = 0.30;
+        document.getElementById('calc-d').value = 0.05;
+        document.getElementById('calc-loss').value = 10;
+      } else if (preset === 'breakfast') {
+        document.getElementById('calc-z').value = 2; // 95%
+        document.getElementById('calc-p').value = 0.50;
+        document.getElementById('calc-d').value = 0.05;
+        document.getElementById('calc-loss').value = 10;
+      } else if (preset === 'celiac') {
+        document.getElementById('calc-z').value = 2; // 95%
+        document.getElementById('calc-p').value = 0.05;
+        document.getElementById('calc-d').value = 0.02;
+        document.getElementById('calc-loss').value = 10;
+      }
+      updateSampleSizeCalc();
+    }
+
+    function updateSampleSizeCalc() {
+      const zIdx = parseInt(document.getElementById('calc-z').value);
+      const zValues = [1.645, 1.96, 2.576];
+      const zLabels = ["90% (Z = 1.645)", "95% (Z = 1.960)", "99% (Z = 2.576)"];
+      const z = zValues[zIdx - 1];
+      document.getElementById('calc-z-display').innerText = zLabels[zIdx - 1];
+
+      const p = parseFloat(document.getElementById('calc-p').value);
+      document.getElementById('calc-p-display').innerText = `${Math.round(p * 100)}% (${p.toFixed(2)})`;
+
+      const d = parseFloat(document.getElementById('calc-d').value);
+      document.getElementById('calc-d-display').innerText = `±${Math.round(d * 100)}% (${d.toFixed(2)})`;
+
+      const loss = parseInt(document.getElementById('calc-loss').value);
+      document.getElementById('calc-loss-display').innerText = `${loss}%`;
+      document.getElementById('calc-loss-sub').innerText = `${loss}%`;
+
+      const topNumerator = Math.pow(z, 2) * p * (1 - p);
+      const bottomDenominator = Math.pow(d, 2);
+      const nExact = topNumerator / bottomDenominator;
+      const nFinal = Math.ceil(nExact);
+      document.getElementById('calc-result-n').innerText = nFinal;
+
+      const nInvite = Math.ceil(nFinal / (1 - (loss / 100)));
+      document.getElementById('calc-result-invite').innerText = `≈ ${nInvite} to invite`;
+
+      // Step-by-Step Math Substitution
+      document.getElementById('math-top').innerText = `${z}² × ${p.toFixed(2)} × ${(1-p).toFixed(2)} = ${topNumerator.toFixed(4)}`;
+      document.getElementById('math-bottom').innerText = `${d.toFixed(2)}² = ${bottomDenominator.toFixed(4)}`;
+      document.getElementById('math-divide').innerText = `${topNumerator.toFixed(4)} ÷ ${bottomDenominator.toFixed(4)} = ${nExact.toFixed(1)} ➔ ${nFinal}`;
+      document.getElementById('math-buffer').innerText = `${nFinal} ÷ ${(1 - loss/100).toFixed(2)} = ${nInvite} students`;
+
+      document.getElementById('calc-thesis-text').innerText = `"To estimate an expected ${Math.round(p * 100)}% prevalence with 95% confidence (Z = ${z}) and a ${Math.round(d * 100)}% margin of precision, Cochran's formula yielded a minimum required sample of n = ${nFinal}. Inflating for ${loss}% anticipated non-response, a total of ${nInvite} students should be invited."`;
+    }
+
+    function updateAllCharts() {
+      const activeBtn = document.querySelector('.tool-btn-active');
+      const activeId = activeBtn ? parseInt(activeBtn.id.replace('tool-btn-', '')) : 1;
+      switchLabTool(activeId);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      switchLabTool(1);
+      updateSampleSizeCalc();
+    });
+  </script>
+</body>
+</html>

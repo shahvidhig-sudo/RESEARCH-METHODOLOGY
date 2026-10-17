@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biostatistics & Research Methodology | Nature Portfolio Journal Edition</title>
+  <title>Research Methodology & Biostatistics | Nature Portfolio Journal Edition</title>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -45,26 +45,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
 
   <style>
-    /* Nature Portfolio Editorial Styles */
+    /* Nature Portfolio Editorial Styling */
     .nature-journal-border {
       border-top: 3px solid #c70000;
-    }
-    .editorial-dropcap::first-letter {
-      float: left;
-      font-size: 3.5rem;
-      line-height: 2.8rem;
-      padding-top: 4px;
-      padding-right: 8px;
-      padding-bottom: 2px;
-      font-family: "Newsreader", serif;
-      font-weight: 700;
-      color: #c70000;
     }
     .tool-btn-active {
       background-color: #c70000 !important;
       color: #ffffff !important;
       border-color: #9b0000 !important;
       box-shadow: 0 4px 14px rgba(199, 0, 0, 0.25);
+    }
+    .diagram-tab-active {
+      border-bottom: 2px solid #c70000;
+      color: #c70000 !important;
+      font-weight: 700;
     }
     ::-webkit-scrollbar { width: 7px; height: 7px; }
     ::-webkit-scrollbar-track { background: #f1f5f9; }
@@ -81,7 +75,7 @@
 </head>
 <body class="bg-[#fbfbfc] text-slate-800 dark:bg-[#0c121e] dark:text-slate-100 font-sans antialiased selection:bg-nature-crimson selection:text-white transition-colors duration-200">
 
-  <!-- ================= TOP MASTHEAD: NATURE PORTFOLIO STYLE ================= -->
+  <!-- ================= TOP MASTHEAD ================= -->
   <header class="border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#0f172a]/95 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -90,13 +84,13 @@
         <div class="flex items-center gap-3">
           <span class="text-nature-crimson font-bold uppercase tracking-widest flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-nature-crimson"></span>
-            Nature Nutrition & Biostatistics
+            Research Methodology & Biostatistics
           </span>
           <span class="hidden md:inline text-slate-300 dark:text-slate-700">|</span>
-          <span class="hidden md:inline">M.Sc Semester 3 Curriculum Companion (Units 1 & 2)</span>
+          <span class="hidden md:inline">M.Sc Semester 3 Comprehensive Curriculum Platform</span>
         </div>
         <div class="flex items-center gap-3">
-          <span class="font-mono text-[10px] text-slate-400">Ref: UGC-NET / Research Aptitude pp. 65–95</span>
+          <span class="font-mono text-[10px] text-slate-400">Nature Portfolio Editorial Framework</span>
           <button id="theme-toggle" class="p-1 rounded text-slate-400 hover:text-slate-700 dark:hover:text-slate-200" title="Toggle Light/Dark Theme">
             <i data-lucide="moon" class="w-3.5 h-3.5 hidden dark:block"></i>
             <i data-lucide="sun" class="w-3.5 h-3.5 block dark:hidden"></i>
@@ -104,27 +98,28 @@
         </div>
       </div>
 
-      <!-- Journal Main Header Bar -->
+      <!-- Main Navigation Header -->
       <div class="flex items-center justify-between h-16">
         
-        <a href="#top" class="flex items-baseline gap-2 group">
+        <a href="https://shahvidhig-sudo.github.io/RESEARCH-METHODOLOGY/" class="flex items-baseline gap-2 group">
           <span class="font-serif text-2xl font-black text-slate-900 dark:text-white tracking-tight">
             nature <span class="font-sans font-light text-nature-crimson text-xl">biostatistics</span>
           </span>
-          <span class="text-[10px] uppercase font-mono font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-1.5 py-0.5 rounded">Lab Edition</span>
+          <span class="text-[10px] uppercase font-mono font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-1.5 py-0.5 rounded">Syllabus Portal</span>
         </a>
 
-        <!-- Navigation Tabs -->
+        <!-- Desktop Navigation Links -->
         <nav class="hidden lg:flex items-center gap-1 text-xs font-semibold text-slate-600 dark:text-slate-300">
+          <a href="#research-flow" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Research Flow</a>
           <a href="#stats-lab" class="px-3 py-1.5 rounded-md bg-red-50 dark:bg-red-950/40 text-nature-crimson dark:text-red-300 border border-red-200 dark:border-red-900/60 font-bold hover:bg-red-100 transition flex items-center gap-1.5">
             <i data-lucide="activity" class="w-3.5 h-3.5 text-nature-crimson"></i>
-            <span>Statistical Tool Lab</span>
+            <span>Statistical Lab (7 Tools)</span>
           </a>
+          <a href="#data-presentation" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Data Presentation</a>
           <a href="#unit-1" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Unit 1: Biostatistics</a>
-          <a href="#unit-2" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Unit 2: Research Methods</a>
+          <a href="#unit-2" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Unit 2: Methods</a>
           <a href="#cochran-calculator" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Sample Sizing</a>
-          <a href="#bio-databases" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Bio-Databases</a>
-          <a href="#exam-glossary" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Glossary & Viva</a>
+          <a href="#reporting-types" class="px-2.5 py-1.5 rounded-md hover:text-nature-crimson hover:bg-slate-50 dark:hover:bg-slate-800 transition">Reporting</a>
         </nav>
 
         <div class="flex items-center gap-2">
@@ -132,7 +127,7 @@
             <i data-lucide="help-circle" class="w-3.5 h-3.5"></i>
             <span>Self-Test Quiz</span>
           </button>
-          <button onclick="window.print()" class="p-2 rounded-md text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Print/Export Notes">
+          <button onclick="window.print()" class="p-2 rounded-md text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Print/Export Clean Notes">
             <i data-lucide="printer" class="w-4 h-4"></i>
           </button>
         </div>
@@ -142,36 +137,36 @@
   </header>
 
 
-  <!-- ================= HERO EDITORIAL PANEL ================= -->
+  <!-- ================= HERO EDITORIAL SECTION ================= -->
   <section id="top" class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] pt-10 pb-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Nature Article Metadata Header -->
       <div class="mb-4">
-        <span class="text-xs font-mono font-bold uppercase tracking-wider text-nature-crimson">Comprehensive Syllabus Reference • Sem 3 Food Science & Nutrition</span>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-nature-crimson">Comprehensive Academic Curriculum • Unit 1 (Biostatistics) & Unit 2 (Research Methods)</span>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 dark:text-white mt-1 leading-tight tracking-tight">
-          Biostatistics & Scientific Research Methodology
+          Research Methodology, Biostatistics & Scientific Process
         </h1>
         <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 max-w-3xl leading-relaxed">
-          An authoritative digital laboratory mapping <strong>Unit 1 (Biostatistics, Data, Probability & Internet Sequence Databases)</strong> and <strong>Unit 2 (Research Methodology, Study Design, Hypothesis Testing & Reporting)</strong>. Featuring interactive nutritional data simulations, test calculations, and formal academic thesis interpretations.
+          From the initial <strong>identification and dissection of a research problem</strong> through theoretical justification, hypothesis testing, sampling formulas, statistical analysis with datasets, diagrammatic presentations, to final <strong>thesis reporting and conclusion</strong>.
         </p>
       </div>
 
       <!-- Quick Action Badges -->
       <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100 dark:border-slate-800">
-        <a href="#stats-lab" class="px-3.5 py-1.5 rounded bg-nature-crimson text-white font-medium text-xs hover:bg-nature-darkcrimson transition flex items-center gap-1.5 shadow-sm">
-          <i data-lucide="play" class="w-3.5 h-3.5 fill-white"></i>
-          <span>Launch Interactive Statistical Lab (7 Tools)</span>
+        <a href="#research-flow" class="px-3.5 py-1.5 rounded bg-nature-crimson text-white font-medium text-xs hover:bg-nature-darkcrimson transition flex items-center gap-1.5 shadow-sm">
+          <i data-lucide="git-branch" class="w-3.5 h-3.5"></i>
+          <span>Explore 9-Step Research Process Flow</span>
         </a>
-        <a href="#cochran-calculator" class="px-3 py-1.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-200 transition flex items-center gap-1">
-          <i data-lucide="calculator" class="w-3.5 h-3.5 text-nature-crimson"></i>
+        <a href="#stats-lab" class="px-3 py-1.5 rounded bg-red-50 dark:bg-red-950 text-nature-crimson dark:text-red-300 border border-red-200 dark:border-red-900 text-xs font-medium hover:bg-red-100 transition flex items-center gap-1">
+          <i data-lucide="activity" class="w-3.5 h-3.5"></i>
+          <span>Interactive Statistical Tool Lab (7 Tests)</span>
+        </a>
+        <a href="#data-presentation" class="px-3 py-1.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-200 transition flex items-center gap-1">
+          <i data-lucide="bar-chart" class="w-3.5 h-3.5 text-nature-crimson"></i>
+          <span>Data Presentation Styles & Ogives</span>
+        </a>
+        <a href="#cochran-calculator" class="px-3 py-1.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-200 transition">
           <span>Sample Size Calculator</span>
-        </a>
-        <a href="#unit-1" class="px-3 py-1.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-200 transition">
-          <span>Explore Unit 1 (Biostats)</span>
-        </a>
-        <a href="#unit-2" class="px-3 py-1.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-200 transition">
-          <span>Explore Unit 2 (Methods)</span>
         </a>
       </div>
 
@@ -179,22 +174,366 @@
   </section>
 
 
-  <!-- ================= CORE FEATURE: INTERACTIVE STATISTICAL TOOL LAB ================= -->
-  <section id="stats-lab" class="py-12 border-b border-slate-200 dark:border-slate-800 bg-[#f8fafc] dark:bg-[#090e17]">
+  <!-- ================= SECTION: COMPLETE RESEARCH FLOW & PROCESS ================= -->
+  <section id="research-flow" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-[#fbfbfc] dark:bg-[#0c121e]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Header -->
+      <div class="mb-10">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-nature-crimson">End-to-End Scientific Architecture</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white mt-1">
+          The Research Flow: From Problem Identification to Conclusion
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
+          Scientific inquiry is a systematic, cyclical, and self-correcting progression. Below is the complete step-by-step workflow tracking every stage from the initial broad curiosity to final defensible conclusions.
+        </p>
+      </div>
+
+      <!-- Visual 9-Step Horizontal Pipeline -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-9 gap-2 mb-12 text-center text-xs">
+        <div class="p-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-nature-crimson text-white font-mono font-bold text-[10px] flex items-center justify-center mx-auto mb-1.5">1</span>
+          <strong class="block text-slate-900 dark:text-white text-[11px] leading-tight">Problem Formulation</strong>
+          <span class="text-[10px] text-slate-400 mt-1 block">Area & Gap Selection</span>
+        </div>
+        <div class="p-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-nature-crimson text-white font-mono font-bold text-[10px] flex items-center justify-center mx-auto mb-1.5">2</span>
+          <strong class="block text-slate-900 dark:text-white text-[11px] leading-tight">Review Structure</strong>
+          <span class="text-[10px] text-slate-400 mt-1 block">Contextual Scope</span>
+        </div>
+        <div class="p-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-nature-crimson text-white font-mono font-bold text-[10px] flex items-center justify-center mx-auto mb-1.5">3</span>
+          <strong class="block text-slate-900 dark:text-white text-[11px] leading-tight">Literature Review</strong>
+          <span class="text-[10px] text-slate-400 mt-1 block">Primary & Secondary</span>
+        </div>
+        <div class="p-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-nature-crimson text-white font-mono font-bold text-[10px] flex items-center justify-center mx-auto mb-1.5">4</span>
+          <strong class="block text-slate-900 dark:text-white text-[11px] leading-tight">Hypotheses (H₀/H₁)</strong>
+          <span class="text-[10px] text-slate-400 mt-1 block">Testable Statements</span>
+        </div>
+        <div class="p-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-nature-crimson text-white font-mono font-bold text-[10px] flex items-center justify-center mx-auto mb-1.5">5</span>
+          <strong class="block text-slate-900 dark:text-white text-[11px] leading-tight">Research Design</strong>
+          <span class="text-[10px] text-slate-400 mt-1 block">RCT / Cohort / Survey</span>
+        </div>
+        <div class="p-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-nature-crimson text-white font-mono font-bold text-[10px] flex items-center justify-center mx-auto mb-1.5">6</span>
+          <strong class="block text-slate-900 dark:text-white text-[11px] leading-tight">Sample Sizing</strong>
+          <span class="text-[10px] text-slate-400 mt-1 block">Probability Sampling</span>
+        </div>
+        <div class="p-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-nature-crimson text-white font-mono font-bold text-[10px] flex items-center justify-center mx-auto mb-1.5">7</span>
+          <strong class="block text-slate-900 dark:text-white text-[11px] leading-tight">Data Collection</strong>
+          <span class="text-[10px] text-slate-400 mt-1 block">Questionnaires / SOPs</span>
+        </div>
+        <div class="p-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-nature-crimson text-white font-mono font-bold text-[10px] flex items-center justify-center mx-auto mb-1.5">8</span>
+          <strong class="block text-slate-900 dark:text-white text-[11px] leading-tight">Data Analysis</strong>
+          <span class="text-[10px] text-slate-400 mt-1 block">Statistical Testing</span>
+        </div>
+        <div class="p-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-nature-crimson text-white font-mono font-bold text-[10px] flex items-center justify-center mx-auto mb-1.5">9</span>
+          <strong class="block text-slate-900 dark:text-white text-[11px] leading-tight">Conclusion & Report</strong>
+          <span class="text-[10px] text-slate-400 mt-1 block">Thesis & Publications</span>
+        </div>
+      </div>
+
+      <!-- IN-DEPTH: 6 STAGES OF PROBLEM FORMULATION -->
+      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-6 shadow-sm mb-12">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 mb-4">
+          <div>
+            <span class="text-[10px] font-mono uppercase font-bold text-nature-crimson">Methodological Deep Dive</span>
+            <h3 class="font-serif font-bold text-lg text-slate-900 dark:text-white">
+              The 6 Systematic Stages in Formulating a Research Problem
+            </h3>
+          </div>
+          <span class="text-xs bg-red-50 dark:bg-red-950 text-nature-crimson font-mono px-2.5 py-0.5 rounded font-bold">
+            FINER Criteria
+          </span>
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+          How do researchers narrow down a vague, massive topic into a sharp, empirical, and testable research problem? Follow this six-stage hierarchical narrowing model with an applied nutrition example:
+        </p>
+
+        <div class="space-y-3 text-xs">
+          
+          <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border-l-4 border-slate-400">
+            <span class="font-mono text-[10px] text-slate-400 font-bold block uppercase">Stage I: Selection of a Broad Research Area</span>
+            <strong class="text-slate-900 dark:text-white block mt-0.5">Broad Field: Pediatric & Adolescent Nutrition in India</strong>
+            <p class="text-slate-600 dark:text-slate-300 mt-1">Begins with general professional curiosity, clinical observations, or high public health burden reported in national surveys.</p>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border-l-4 border-amber-500">
+            <span class="font-mono text-[10px] text-amber-600 dark:text-amber-400 font-bold block uppercase">Stage II: Dissecting the Broad Area into Sub-Areas</span>
+            <strong class="text-slate-900 dark:text-white block mt-0.5">Sub-Area Breakdown:</strong>
+            <p class="text-slate-600 dark:text-slate-300 mt-1">Dissect the field into operational sub-categories: (1) Macronutrient stunting/wasting, (2) Micronutrient deficiencies, (3) School meal schemes, (4) Adolescent iron deficiency, (5) Dietary diversity in rural hostels.</p>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border-l-4 border-blue-500">
+            <span class="font-mono text-[10px] text-blue-600 dark:text-blue-400 font-bold block uppercase">Stage III: Selecting the Specific Area of Interest</span>
+            <strong class="text-slate-900 dark:text-white block mt-0.5">Focused Sub-Field: Nutritional Iron Deficiency Anemia in Adolescent Schoolgirls</strong>
+            <p class="text-slate-600 dark:text-slate-300 mt-1">Researcher discards extraneous sub-areas to concentrate solely on iron bioavailability, dietary phytate inhibitors, and hemoglobin levels.</p>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border-l-4 border-purple-500">
+            <span class="font-mono text-[10px] text-purple-600 dark:text-purple-400 font-bold block uppercase">Stage IV: Generating Specific Research Questions</span>
+            <strong class="text-slate-900 dark:text-white block mt-0.5">Formulating Research Questions:</strong>
+            <p class="text-slate-600 dark:text-slate-300 mt-1"><em>Q1:</em> What is the baseline prevalence of microcytic anemia among adolescent schoolgirls in district X?<br/><em>Q2:</em> Does daily dietary consumption of an iron-fortified millet snack significantly improve endline hemoglobin over 12 weeks compared with standard snacks?</p>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border-l-4 border-emerald-500">
+            <span class="font-mono text-[10px] text-emerald-600 dark:text-emerald-400 font-bold block uppercase">Stage V: Deciding Measurable Objectives</span>
+            <strong class="text-slate-900 dark:text-white block mt-0.5">Measurable Operational Objectives:</strong>
+            <p class="text-slate-600 dark:text-slate-300 mt-1"><strong>General:</strong> To evaluate the therapeutic efficacy of bio-fortified millet supplementation.<br/><strong>Specific:</strong> (1) Estimate mean baseline Hb and serum ferritin; (2) Compare 12-week changes between fortified and control groups; (3) Assess dietary adherence via daily visual consumption logs.</p>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-red-50/60 dark:bg-red-950/30 border-l-4 border-nature-crimson">
+            <span class="font-mono text-[10px] text-nature-crimson font-bold block uppercase">Stage VI: Formulating the Final Statement of the Research Problem</span>
+            <strong class="text-slate-900 dark:text-white block mt-0.5 font-serif text-sm">
+              "A Double-Blind Randomised Controlled Trial Evaluating the Efficacy of an Iron-Fortified Pearl Millet Snack on Hemoglobin and Ferritin Status in Adolescent Schoolgirls Aged 12–16 Years in Gujarat."
+            </strong>
+            <p class="text-slate-600 dark:text-slate-300 mt-1 text-[11px]">Validates the FINER criteria: Feasible (local millet access), Interesting, Novel, Ethical (IEC approval obtained), and Relevant to national anemia elimination missions.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION: COMPLETE DATA PRESENTATION STYLES ================= -->
+  <section id="data-presentation" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-10">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-nature-crimson">Syllabus Mandate • Unit 1 & Unit 2</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white mt-1">
+          Data Presentation Styles: Graphical, Diagrammatic & Interpretation
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
+          Complete coverage of all syllabus visual display formats: One-dimensional (Bar diagrams), Two-dimensional (Pie charts), Histograms, Frequency Polygons, Cumulative Frequency Curves (Ogives), and rules for scientific interpretation of tables and figures.
+        </p>
+      </div>
+
+      <!-- Diagrammatic vs Graphical Classification Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12 text-xs">
+        
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900 shadow-sm">
+          <span class="text-[10px] font-mono text-nature-crimson font-bold uppercase block mb-1">One-Dimensional</span>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-1.5">Bar Diagrams</h4>
+          <p class="text-slate-600 dark:text-slate-300 mb-2">Width is arbitrary; length represents magnitude.</p>
+          <ul class="space-y-1 text-slate-500">
+            <li>• <strong>Simple:</strong> Single discrete categories.</li>
+            <li>• <strong>Sub-divided / Component:</strong> Showing parts of a total (e.g. Carbs, Protein, Fat in calories).</li>
+            <li>• <strong>Multiple:</strong> Grouped comparisons (e.g. Boys vs Girls).</li>
+            <li>• <strong>Percentage Bar:</strong> Standardized to 100%.</li>
+          </ul>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900 shadow-sm">
+          <span class="text-[10px] font-mono text-nature-crimson font-bold uppercase block mb-1">Two-Dimensional</span>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-1.5">Pie & Area Charts</h4>
+          <p class="text-slate-600 dark:text-slate-300 mb-2">Both length and breadth are considered.</p>
+          <ul class="space-y-1 text-slate-500">
+            <li>• <strong>Pie Diagram (Circle):</strong> Area partitioned into angular sectors proportional to shares.</li>
+            <li>• <strong>Sector Angle:</strong> $(\text{Value} / \text{Total}) \times 360^\circ$.</li>
+            <li>• <strong>Nutrition Use:</strong> National dietary calorie contribution by food groups.</li>
+          </ul>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900 shadow-sm">
+          <span class="text-[10px] font-mono text-nature-crimson font-bold uppercase block mb-1">Frequency Graph</span>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-1.5">Histogram & Polygon</h4>
+          <p class="text-slate-600 dark:text-slate-300 mb-2">Continuous numerical class intervals.</p>
+          <ul class="space-y-1 text-slate-500">
+            <li>• <strong>Histogram:</strong> Adjacent touching rectangles; area equals frequency.</li>
+            <li>• <strong>Frequency Polygon:</strong> Midpoints of rectangle tops joined by straight lines.</li>
+            <li>• <strong>Frequency Curve:</strong> Smoothed freehand curve through polygon vertices.</li>
+          </ul>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900 shadow-sm">
+          <span class="text-[10px] font-mono text-nature-crimson font-bold uppercase block mb-1">Cumulative Curves</span>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-1.5">Ogives & Median</h4>
+          <p class="text-slate-600 dark:text-slate-300 mb-2">Cumulative frequency distributions.</p>
+          <ul class="space-y-1 text-slate-500">
+            <li>• <strong>'Less Than' Ogive:</strong> Rising curve starting from bottom-left.</li>
+            <li>• <strong>'More Than' Ogive:</strong> Falling curve starting from top-left.</li>
+            <li>• <strong>Median Intersection:</strong> Point where both ogives cross yields the exact Median ($M$)!</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- IN-DEPTH: INTERPRETATION TECHNIQUES FOR TABLES & FIGURES -->
+      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-6 shadow-sm mb-12">
+        <h3 class="font-serif font-bold text-lg text-slate-900 dark:text-white mb-2">
+          Scientific Interpretation of Tables and Figures
+        </h3>
+        <p class="text-xs text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+          In scientific research, raw tables and figures do not speak for themselves. Interpretation is the process of extracting physiological and empirical meaning, comparing results with theoretical expectations, and drawing bounded conclusions.
+        </p>
+
+        <!-- Practical Exemplar Walkthrough -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- Sample Table -->
+          <div class="lg:col-span-6 rounded-lg border border-slate-200 dark:border-slate-800 overflow-hidden text-xs">
+            <div class="bg-slate-100 dark:bg-slate-800 px-4 py-2 font-bold text-slate-800 dark:text-slate-200 flex justify-between">
+              <span>Table 1: 12-Week Dietary Intervention Outcomes</span>
+              <span class="font-mono text-[10px] text-slate-400">Randomised Trial (N = 60)</span>
+            </div>
+            <table class="w-full text-left">
+              <thead class="bg-slate-50 dark:bg-slate-800/60 font-semibold border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="p-2.5">Variable</th>
+                  <th class="p-2.5">Control Diet (n=30)</th>
+                  <th class="p-2.5">Millet Diet (n=30)</th>
+                  <th class="p-2.5">p-Value</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                <tr>
+                  <td class="p-2.5 font-medium">Baseline Hb (g/dL)</td>
+                  <td class="p-2.5">10.8 ± 0.6</td>
+                  <td class="p-2.5">10.9 ± 0.7</td>
+                  <td class="p-2.5 font-mono">0.54 (NS)</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-medium">Endline Hb (g/dL)</td>
+                  <td class="p-2.5">11.0 ± 0.7</td>
+                  <td class="p-2.5">12.6 ± 0.8</td>
+                  <td class="p-2.5 font-mono text-nature-crimson font-bold">< 0.001*</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-medium">Net Change (Δ Hb)</td>
+                  <td class="p-2.5">+0.2 ± 0.4</td>
+                  <td class="p-2.5">+1.7 ± 0.6</td>
+                  <td class="p-2.5 font-mono text-nature-crimson font-bold">< 0.001*</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-medium">Serum Ferritin (μg/L)</td>
+                  <td class="p-2.5">14.2 ± 3.1</td>
+                  <td class="p-2.5">26.8 ± 4.5</td>
+                  <td class="p-2.5 font-mono text-nature-crimson font-bold">< 0.0001*</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Step-by-Step Interpretation Guide -->
+          <div class="lg:col-span-6 space-y-3 text-xs">
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <strong class="text-nature-crimson font-bold block mb-1">1. Baseline Equivalence Verification:</strong>
+              <p class="text-slate-600 dark:text-slate-300">Baseline Hb did not differ significantly between groups ($p = 0.54$), confirming that random allocation successfully balanced baseline nutritional status.</p>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <strong class="text-nature-crimson font-bold block mb-1">2. Quantitative & Statistical Inference:</strong>
+              <p class="text-slate-600 dark:text-slate-300">The fortified millet group achieved an extra $+1.5\text{ g/dL}$ increase in Hb and nearly doubled serum ferritin ($26.8$ vs $14.2\,\mu\text{g/L}$, $p < 0.0001$). This confirms treatment efficacy.</p>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <strong class="text-nature-crimson font-bold block mb-1">3. Avoiding Unsupported Overreach (Scope of Generalization):</strong>
+              <p class="text-slate-600 dark:text-slate-300">The conclusion is bounded to adolescent schoolgirls over 12 weeks. It cannot claim permanent lifetime eradication of all anemia or generalizability to pregnant adults without separate empirical trials.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION: REPORTING & TYPES OF REPORTS ================= -->
+  <section id="reporting-types" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-[#fbfbfc] dark:bg-[#0c121e]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-10">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-nature-crimson">Syllabus Unit 2 • Scientific Communication</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white mt-1">
+          Scientific Reporting, Steps in Writing & Types of Reports
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
+          Significance of report writing, the six formal steps in drafting, the distinct categories of scientific reports, and strict guidelines for thesis formatting.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-xs">
+        
+        <!-- Technical Report / Thesis -->
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <span class="p-1.5 rounded bg-red-100 text-nature-crimson font-mono text-[10px] font-bold">TYPE 1</span>
+            <span class="text-[10px] text-slate-400 uppercase font-mono">Academic Examination</span>
+          </div>
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white mb-2">Technical Report / Thesis</h3>
+          <p class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed">
+            Exhaustive, comprehensive document written under faculty supervision for a master's or doctoral degree.
+          </p>
+          <ul class="space-y-1.5 text-slate-500">
+            <li>• Extended theoretical background and broad literature review.</li>
+            <li>• Complete operational descriptions of all apparatus, reagents, and SOPs.</li>
+            <li>• Comprehensive appendices: full raw codebooks, ethics certificates, consent forms, and questionnaires.</li>
+          </ul>
+        </div>
+
+        <!-- Research Article (IMRaD) -->
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <span class="p-1.5 rounded bg-blue-100 text-blue-800 font-mono text-[10px] font-bold">TYPE 2</span>
+            <span class="text-[10px] text-slate-400 uppercase font-mono">Peer-Reviewed Journal</span>
+          </div>
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white mb-2">Journal Article (IMRaD)</h3>
+          <p class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed">
+            Distills the thesis into a focused, highly reproducible scientific paper adhering to journal word counts.
+          </p>
+          <ul class="space-y-1.5 text-slate-500">
+            <li>• <strong>Introduction:</strong> Defined research gap and prespecified objective.</li>
+            <li>• <strong>Methods:</strong> Concise, reproducible experimental design.</li>
+            <li>• <strong>Results:</strong> Factual tables and figures without speculation.</li>
+            <li>• <strong>Discussion:</strong> Mechanistic explanation, limitations, and bounded implications.</li>
+          </ul>
+        </div>
+
+        <!-- Popular / Policy Report -->
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <span class="p-1.5 rounded bg-amber-100 text-amber-800 font-mono text-[10px] font-bold">TYPE 3</span>
+            <span class="text-[10px] text-slate-400 uppercase font-mono">Public Health Policy</span>
+          </div>
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white mb-2">Popular & Policy Brief</h3>
+          <p class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed">
+            Written for government health officials, NGOs, and the general public in clear, accessible prose.
+          </p>
+          <ul class="space-y-1.5 text-slate-500">
+            <li>• Focuses on actionable findings rather than mathematical formulas.</li>
+            <li>• Employs visual infographic summaries and executive policy recommendations.</li>
+            <li>• Translates biomarker improvements into community nutritional interventions.</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION: STATISTICAL TOOL LAB (7 TESTS) ================= -->
+  <section id="stats-lab" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-[#f8fafc] dark:bg-[#090e17]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
       <div class="flex flex-wrap items-baseline justify-between gap-4 mb-6">
         <div>
           <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-nature-crimson"></span>
-            <span class="text-xs uppercase font-mono font-bold tracking-widest text-nature-crimson">Syllabus Practical Lab</span>
+            <span class="text-xs uppercase font-mono font-bold tracking-widest text-nature-crimson">Interactive Laboratory Simulator</span>
           </div>
           <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white mt-1">
-            Statistical Tools, Sample Datasets & Interpretation Simulator
+            Statistical Tools, Datasets & Nature-Style Interpretations
           </h2>
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
-            Select any statistical test from Unit 1 & 2 to view its real nutritional sample dataset, mathematical output, and formal Nature-style thesis interpretation.
+            Select any tool from the prescribed syllabus to inspect its real nutrition sample dataset, computed outputs, and copy-ready formal thesis phrasing.
           </p>
         </div>
         <span class="text-xs bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 px-3 py-1 rounded font-mono">
@@ -256,10 +595,9 @@
 
       </div>
 
-      <!-- MAIN DISPLAY CARD -->
+      <!-- MAIN LAB DISPLAY CARD -->
       <div class="bg-white dark:bg-[#0f172a] rounded-xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
         
-        <!-- Question & Meta Header -->
         <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800 mb-6">
           <div>
             <span id="lab-tool-category" class="text-[10px] font-mono uppercase font-bold text-nature-crimson tracking-wider">
@@ -276,7 +614,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           
-          <!-- Left Column: Raw Dataset Table & Live Chart -->
+          <!-- Table and Plot -->
           <div class="lg:col-span-6 space-y-4">
             
             <div class="rounded-lg border border-slate-200 dark:border-slate-800 overflow-hidden">
@@ -294,7 +632,6 @@
               </div>
             </div>
 
-            <!-- Dynamic Chart Panel -->
             <div class="rounded-lg border border-slate-200 dark:border-slate-800 p-4 bg-slate-50/50 dark:bg-slate-900/40">
               <div class="flex justify-between items-center mb-2">
                 <h4 id="lab-chart-caption" class="text-xs font-bold text-slate-800 dark:text-slate-200">
@@ -309,10 +646,9 @@
 
           </div>
 
-          <!-- Right Column: Method Selection, Calculated Output & Thesis Interpretation -->
+          <!-- Method, Results & Phrasing -->
           <div class="lg:col-span-6 space-y-4">
             
-            <!-- Tool Applied & Rationale -->
             <div class="p-4 rounded-lg bg-red-50/50 dark:bg-red-950/20 border border-red-100 dark:border-red-900/40">
               <span class="text-[10px] font-mono uppercase text-nature-crimson font-bold block mb-1">1. Appropriate Statistical Tool & Rationale</span>
               <h4 id="lab-applied-method" class="text-base font-bold text-slate-900 dark:text-white">
@@ -323,7 +659,6 @@
               </p>
             </div>
 
-            <!-- Computed Statistical Results Box -->
             <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
               <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block mb-2">2. Computed Statistical Outputs</span>
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center" id="lab-metrics-container">
@@ -331,7 +666,6 @@
               </div>
             </div>
 
-            <!-- Interpretation & Nature Portfolio Reporting Style -->
             <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3">
               <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">3. Scientific Interpretation & Thesis Writing</span>
               
@@ -364,8 +698,8 @@
   </section>
 
 
-  <!-- ================= UNIT 1: BIOSTATISTICS & DATA COLLECTION ================= -->
-  <section id="unit-1" class="py-14 border-b border-slate-200 dark:border-slate-800">
+  <!-- ================= SECTION: UNIT 1 & SEQUENCE DATABASES ================= -->
+  <section id="unit-1" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="mb-10">
@@ -374,15 +708,13 @@
           Biostatistics, Probability & Data Collection Methods
         </h2>
         <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
-          Core biostatistical foundations from pp. 65–88: classification of data, population vs sample, measures of central tendency, dispersion, probability distribution, schedules, questionnaires, and reliability.
+          Complete biostatistical foundations: classification of data, population vs sample, measures of central tendency, dispersion, probability distribution, schedules, questionnaires, and reliability.
         </p>
       </div>
 
-      <!-- Core Topics Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         
-        <!-- 1. Types of Data & Population vs Sample -->
-        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] shadow-sm">
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900 shadow-sm">
           <div class="flex items-center justify-between mb-3">
             <span class="p-1.5 rounded bg-red-100 text-nature-crimson dark:bg-red-950 dark:text-red-300 font-mono text-xs font-bold">1.1</span>
             <span class="text-[10px] font-mono text-slate-400 uppercase">Foundations</span>
@@ -396,8 +728,7 @@
           </ul>
         </div>
 
-        <!-- 2. Central Tendency & Dispersion -->
-        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] shadow-sm">
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900 shadow-sm">
           <div class="flex items-center justify-between mb-3">
             <span class="p-1.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 font-mono text-xs font-bold">1.2</span>
             <span class="text-[10px] font-mono text-slate-400 uppercase">Descriptive Stats</span>
@@ -411,8 +742,7 @@
           </ul>
         </div>
 
-        <!-- 3. Probability & Distribution Theory -->
-        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] shadow-sm">
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900 shadow-sm">
           <div class="flex items-center justify-between mb-3">
             <span class="p-1.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 font-mono text-xs font-bold">1.3</span>
             <span class="text-[10px] font-mono text-slate-400 uppercase">Probability</span>
@@ -427,93 +757,16 @@
 
       </div>
 
-      <!-- Data Collection Methods, Questionnaire vs Schedule, Validity -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
-        
-        <!-- Questionnaire vs Schedule Table -->
-        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-5 shadow-sm">
-          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <i data-lucide="clipboard-list" class="w-4 h-4 text-nature-crimson"></i>
-            Methods of Data Collection: Questionnaire vs Schedule
-          </h3>
-          <p class="text-xs text-slate-500 mb-4">A critical distinction frequently tested in university examinations.</p>
-
-          <div class="overflow-x-auto">
-            <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 dark:bg-slate-800 font-bold border-b border-slate-200 dark:border-slate-700">
-                <tr>
-                  <th class="py-2.5 px-3">Feature</th>
-                  <th class="py-2.5 px-3">Questionnaire</th>
-                  <th class="py-2.5 px-3">Schedule</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-                <tr>
-                  <td class="py-2 px-3 font-semibold text-slate-800 dark:text-slate-200">Administration</td>
-                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Mailed or handed to respondent to fill by themselves.</td>
-                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Filled directly by a trained enumerator/researcher in person.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-semibold text-slate-800 dark:text-slate-200">Literacy Requirement</td>
-                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Requires literate respondents who can read and write.</td>
-                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Works with illiterate populations as interviewer reads questions.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-semibold text-slate-800 dark:text-slate-200">Cost & Reach</td>
-                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Economical for wide geographical reach; low response rate.</td>
-                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">More expensive (enumerator travel/training), but high response rate.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-semibold text-slate-800 dark:text-slate-200">Nutritional Example</td>
-                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Mailed Food Frequency Questionnaire (FFQ) to office workers.</td>
-                  <td class="py-2 px-3 text-slate-600 dark:text-slate-300">Home visit 24-hour dietary recall administered by a field dietitian.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Reliability and Validity of Measuring Tools -->
-        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-5 shadow-sm space-y-3">
-          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white mb-1 flex items-center gap-2">
-            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
-            Reliability vs Validity of Nutrition Tools
-          </h3>
-          <p class="text-xs text-slate-500">How to ensure dietary assessment instruments yield trustworthy empirical evidence.</p>
-
-          <div class="space-y-2.5 text-xs">
-            <div class="p-3 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700">
-              <strong class="text-emerald-700 dark:text-emerald-400 font-bold block mb-0.5">Reliability (Consistency):</strong>
-              <p class="text-slate-600 dark:text-slate-300">
-                If the test is repeated under identical conditions, does it give the same result? Measured via <em>Test–Retest Reliability</em>, <em>Inter-Rater Agreement</em>, or Cronbach's Alpha ($\alpha \ge 0.70$).
-                <br/><span class="text-slate-500 italic">Example: A digital weighing scale yielding 62.4 kg five consecutive times.</span>
-              </p>
-            </div>
-            <div class="p-3 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700">
-              <strong class="text-nature-crimson dark:text-red-400 font-bold block mb-0.5">Validity (Accuracy / Truthfulness):</strong>
-              <p class="text-slate-600 dark:text-slate-300">
-                Does the tool measure what it actually claims to measure? Includes <em>Content Validity</em>, <em>Construct Validity</em>, and <em>Criterion Validity</em>.
-                <br/><span class="text-slate-500 italic">Example: Validating an FFQ's reported protein intake against 24-hour urinary nitrogen biomarkers.</span>
-              </p>
-            </div>
-            <div class="p-2.5 rounded bg-blue-50/60 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900 text-[11px] text-blue-900 dark:text-blue-200 font-medium">
-              *Key Scientific Axiom: A measuring tool can be highly reliable (giving identical wrong numbers every time) while being completely invalid! Validity requires true accuracy.
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- SEQUENCE & BIOLOGICAL DATABASES ON THE INTERNET (UNIT 1 SPECIFIC REQUIREMENT) -->
-      <div id="bio-databases" class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-6 shadow-sm">
-        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
+      <!-- Sequence & Nutrient Databases -->
+      <div id="bio-databases" class="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900 p-6 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-slate-200 dark:border-slate-800">
           <div>
             <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-nature-crimson">Syllabus Mandate</span>
             <h3 class="font-serif font-bold text-lg text-slate-900 dark:text-white">
               Access to Sequence & Nutrient Databases on the Internet
             </h3>
           </div>
-          <span class="text-xs bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded font-mono text-slate-600 dark:text-slate-300">ICT in Bio-Nutrition</span>
+          <span class="text-xs bg-white dark:bg-slate-800 px-2.5 py-1 rounded font-mono text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">ICT in Bio-Nutrition</span>
         </div>
 
         <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
@@ -521,22 +774,22 @@
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/40">
             <strong class="text-nature-crimson font-bold block mb-1">1. NCBI GenBank (NIH)</strong>
             <p class="text-slate-600 dark:text-slate-300 mb-2">Comprehensive nucleotide database for analyzing human metabolic genes and dietary enzyme polymorphisms.</p>
             <span class="font-mono text-[10px] text-slate-400">ncbi.nlm.nih.gov/genbank</span>
           </div>
-          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/40">
             <strong class="text-nature-crimson font-bold block mb-1">2. UniProt Knowledgebase</strong>
             <p class="text-slate-600 dark:text-slate-300 mb-2">Universal protein sequence catalog detailing dietary proteins, ferritin iron storage, and lactase persistence.</p>
             <span class="font-mono text-[10px] text-slate-400">uniprot.org</span>
           </div>
-          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/40">
             <strong class="text-nature-crimson font-bold block mb-1">3. USDA FoodData Central</strong>
             <p class="text-slate-600 dark:text-slate-300 mb-2">Open nutrient profiles, micronutrient assays, and food component databases for dietary intake validation.</p>
             <span class="font-mono text-[10px] text-slate-400">fdc.nal.usda.gov</span>
           </div>
-          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/40">
             <strong class="text-nature-crimson font-bold block mb-1">4. Shodhganga & PubMed</strong>
             <p class="text-slate-600 dark:text-slate-300 mb-2">Indian repository of full-text doctoral theses (INFLIBNET) and worldwide indexed biomedical trial literature.</p>
             <span class="font-mono text-[10px] text-slate-400">shodhganga.inflibnet.ac.in</span>
@@ -548,8 +801,8 @@
   </section>
 
 
-  <!-- ================= UNIT 2: RESEARCH METHODS & DESIGN ================= -->
-  <section id="unit-2" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#090e17]">
+  <!-- ================= SECTION: UNIT 2 & STUDY DESIGNS ================= -->
+  <section id="unit-2" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-[#fbfbfc] dark:bg-[#0c121e]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="mb-10">
@@ -558,52 +811,13 @@
           Research Methodology, Study Design & Hypothesis Testing
         </h2>
         <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
-          Complete syllabus coverage from pp. 65–95: Meaning and types of research, identification of problem, features of good design, concepts of variables, experimental vs control groups, hypothesis testing errors, and scientific reporting.
+          Meaning and types of research, identification of problem, features of good design, concepts of variables, experimental vs control groups, hypothesis testing errors, and scientific reporting.
         </p>
-      </div>
-
-      <!-- Types of Research Taxonomy (From Book pp. 66–70) -->
-      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-6 shadow-sm mb-10">
-        <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white mb-2">
-          Comprehensive Taxonomy of Research Types (Book pp. 66–70)
-        </h3>
-        <p class="text-xs text-slate-500 mb-5">Classification by Objective, Application, Logic, Inquiry, and Nature.</p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-          
-          <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-            <span class="font-bold text-nature-crimson block mb-1 uppercase text-[10px]">By Objective</span>
-            <p><strong>Descriptive:</strong> Fact-finding without manipulating variables (Ex-post facto, surveys).</p>
-            <p class="mt-1"><strong>Correlational:</strong> Measuring association between variables ($r$).</p>
-            <p class="mt-1"><strong>Explanatory:</strong> Why events happen (cause-effect theories).</p>
-            <p class="mt-1"><strong>Exploratory:</strong> Investigating loosely defined problems to form hypotheses.</p>
-          </div>
-
-          <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-            <span class="font-bold text-nature-crimson block mb-1 uppercase text-[10px]">By Application</span>
-            <p><strong>Basic / Pure / Fundamental:</strong> Advancing core scientific knowledge and theory (e.g. how cellular insulin receptors bind glucose).</p>
-            <p class="mt-2"><strong>Applied Research:</strong> Solving specific immediate real-world dilemmas (e.g. creating fortified sorghum flour for school lunches).</p>
-          </div>
-
-          <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-            <span class="font-bold text-nature-crimson block mb-1 uppercase text-[10px]">By Logic Process</span>
-            <p><strong>Deductive (Top-Down):</strong> Theory $\to$ Hypothesis $\to$ Observation $\to$ Confirmation (Quantitative paradigm).</p>
-            <p class="mt-2"><strong>Inductive (Bottom-Up):</strong> Observation $\to$ Pattern $\to$ Tentative Hypothesis $\to$ General Theory (Qualitative paradigm).</p>
-          </div>
-
-          <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-            <span class="font-bold text-nature-crimson block mb-1 uppercase text-[10px]">By Inquiry & Nature</span>
-            <p><strong>Action Research (Kurt Lewin):</strong> Immediate localized intervention to diagnose and solve practical operational problems.</p>
-            <p class="mt-2"><strong>Empirical vs Conceptual:</strong> Direct observational data verification vs philosophical re-interpretation of ideas.</p>
-          </div>
-
-        </div>
       </div>
 
       <!-- Variables, Experimental Design & Hypothesis Testing -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
         
-        <!-- Concept of Variables & Experimental vs Control -->
         <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-5 shadow-sm space-y-3">
           <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
             <i data-lucide="git-commit" class="w-4 h-4 text-nature-crimson"></i>
@@ -626,11 +840,10 @@
           </div>
         </div>
 
-        <!-- Hypothesis Testing & Errors in Hypothesis (Type I vs Type II) -->
         <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-5 shadow-sm space-y-3">
           <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
             <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>
-            Hypothesis Testing & Statistical Errors (Book p. 83)
+            Hypothesis Testing & Statistical Errors (Type I vs Type II)
           </h3>
           
           <div class="overflow-x-auto text-xs">
@@ -676,36 +889,11 @@
 
       </div>
 
-      <!-- Reporting, Thesis Structure & Ethics (Book pp. 89–95) -->
-      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] p-6 shadow-sm">
-        <div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-100 dark:border-slate-800">
-          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">
-            Reporting: Thesis Writing Format & Scientific Ethics (Book pp. 89–95)
-          </h3>
-          <span class="font-mono text-xs text-nature-crimson font-bold">Front Matter • Body • End Matter</span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-          <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-            <strong class="text-nature-crimson block mb-1">1. Front Matter</strong>
-            <p class="text-slate-600 dark:text-slate-300">Title page, candidate declaration, supervisor certificate, acknowledgements, abstract (100–150 words), table of contents, list of tables, and list of figures.</p>
-          </div>
-          <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-            <strong class="text-nature-crimson block mb-1">2. Body of Thesis</strong>
-            <p class="text-slate-600 dark:text-slate-300">Introduction & problem justification, exhaustive literature review, detailed methodology (SOPs, sample size, instruments), factual results with tables, and thorough discussion of limitations.</p>
-          </div>
-          <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-            <strong class="text-nature-crimson block mb-1">3. End Matter & Ethics</strong>
-            <p class="text-slate-600 dark:text-slate-300">Alphabetical references (Vancouver/APA format), questionnaires/schedules, raw codebooks, and Institutional Ethics Committee (IEC) consent approval documents.</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
 
-  <!-- ================= COCHRAN'S SAMPLE SIZE CALCULATOR (STEP-BY-STEP ARITHMETIC) ================= -->
+  <!-- ================= SECTION: COCHRAN'S SAMPLE SIZE CALCULATOR ================= -->
   <section id="cochran-calculator" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -719,10 +907,8 @@
         </p>
       </div>
 
-      <!-- Presets and Calculator Container -->
       <div class="rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-900 text-white p-6 sm:p-8 shadow-lg">
         
-        <!-- Preset Scenario Buttons -->
         <div class="mb-6 pb-4 border-b border-slate-800">
           <span class="text-xs font-bold text-red-400 block mb-2 flex items-center gap-1.5 font-mono">
             <i data-lucide="zap" class="w-3.5 h-3.5"></i>
@@ -749,7 +935,6 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          <!-- Sliders -->
           <div class="lg:col-span-7 space-y-4 text-xs font-sans">
             
             <div class="p-3 rounded bg-slate-800/80 border border-slate-700">
@@ -802,7 +987,6 @@
 
           </div>
 
-          <!-- Computed Step-by-Step Box -->
           <div class="lg:col-span-5 space-y-4">
             
             <div class="rounded-lg bg-slate-800 p-5 text-center border border-slate-700">
@@ -817,7 +1001,6 @@
               </div>
             </div>
 
-            <!-- Step-by-Step Arithmetic Substitution Box -->
             <div class="rounded-lg bg-black/50 border border-slate-800 p-4 font-mono text-xs">
               <span class="text-[10px] uppercase text-nature-crimson font-bold block mb-2 font-sans flex items-center gap-1.5">
                 <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
@@ -831,7 +1014,6 @@
               </div>
             </div>
 
-            <!-- Viva Ready Sentence -->
             <div class="p-3.5 rounded bg-slate-800/90 border border-slate-700 text-xs">
               <strong class="text-red-300 block mb-1 text-[11px] font-sans flex items-center gap-1">
                 <i data-lucide="feather" class="w-3.5 h-3.5 text-nature-crimson"></i>
@@ -852,8 +1034,8 @@
   </section>
 
 
-  <!-- ================= EXAM GLOSSARY & REVISION ================= -->
-  <section id="exam-glossary" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#090e17]">
+  <!-- ================= SECTION: EXAM GLOSSARY & REVISION ================= -->
+  <section id="exam-glossary" class="py-14 border-b border-slate-200 dark:border-slate-800 bg-[#fbfbfc] dark:bg-[#0c121e]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
@@ -877,7 +1059,7 @@
             <thead class="bg-slate-100 dark:bg-slate-800/80 font-bold text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
               <tr>
                 <th class="py-2.5 px-4 w-36">Term / Acronym</th>
-                <th class="py-2.5 px-4">Formal Definition (Book pp. 65–95)</th>
+                <th class="py-2.5 px-4">Formal Definition</th>
                 <th class="py-2.5 px-4">Applied Nutritional Context</th>
               </tr>
             </thead>
@@ -926,7 +1108,7 @@
   </section>
 
 
-  <!-- ================= NATURE FOOTER ================= -->
+  <!-- ================= FOOTER ================= -->
   <footer class="py-8 bg-white dark:bg-[#0c121e] border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
@@ -934,7 +1116,7 @@
         <p class="text-[11px] text-slate-400 mt-0.5">Gujarat University • M.Sc Food Science & Nutrition • Semester 3</p>
       </div>
       <div class="flex items-center gap-4 text-[11px]">
-        <span>Syllabus: Units 1 & 2 Completed</span>
+        <span>Units 1 & 2 Comprehensive Platform</span>
         <span>•</span>
         <a href="#top" class="hover:text-nature-crimson transition font-semibold">Back to Top ↑</a>
       </div>
@@ -954,8 +1136,8 @@
           <i data-lucide="award" class="w-4 h-4"></i>
         </div>
         <div>
-          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">Unit 1 & 2 Examination Practice</h3>
-          <span class="text-xs text-slate-500">Self-Test Assessment</span>
+          <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">Examination Self-Test</h3>
+          <span class="text-xs text-slate-500">Syllabus Practice</span>
         </div>
       </div>
 
@@ -977,7 +1159,7 @@
             <button onclick="checkAnswer(this, true, 'q2-exp')" class="w-full text-left p-2 rounded bg-white dark:bg-slate-900 border hover:bg-slate-100">B. Kurt Lewin</button>
             <button onclick="checkAnswer(this, false, 'q2-exp')" class="w-full text-left p-2 rounded bg-white dark:bg-slate-900 border hover:bg-slate-100">C. John Creswell</button>
           </div>
-          <div id="q2-exp" class="hidden mt-2 p-2 rounded bg-emerald-50 text-emerald-800 font-medium">Correct! German-American social psychologist Kurt Lewin coined Action Research in 1940 (Book p. 75).</div>
+          <div id="q2-exp" class="hidden mt-2 p-2 rounded bg-emerald-50 text-emerald-800 font-medium">Correct! German-American social psychologist Kurt Lewin coined Action Research in 1940.</div>
         </div>
       </div>
 
@@ -1109,7 +1291,7 @@
           { label: "Cohen's d", val: "d = 1.53 (Large)" }
         ],
         plainInterp: "Because the calculated p-value (0.003) is far below 0.05, we reject the null hypothesis. The iron-fortified flour produced a statistically significant and large physiological increase of 1.7 g/dL in hemoglobin.",
-        thesisSentence: "\"An independent two-sample t-test revealed that participants receiving iron-fortified flour attained significantly higher endline hemoglobin concentrations (12.8 ± 0.8 g/dL) than those on control flour (11.1 ± 0.7 g/dL), t(18) = 3.42, p = 0.003, Cohen’s d = 1.53, 95% CI [0.66, 2.74].\""
+        thesisSentence: "\"An independent two-sample t-test revealed that participants receiving iron-fortified flour attained significantly higher endline hemoglobin concentrations (12.8 ± 0.8 g/dL) than controls (11.1 ± 0.7 g/dL), t(18) = 3.42, p = 0.003, Cohen’s d = 1.53, 95% CI [0.66, 2.74].\""
       },
 
       3: {

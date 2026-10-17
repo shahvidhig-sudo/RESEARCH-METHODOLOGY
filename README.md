@@ -1,9 +1,9 @@
-# Nature Biostatistics & Research Methodology (Syllabus Edition)
+# Research Methodology & Biostatistics (Nature Portfolio Edition)
 
-An editorial academic web application built in the **Nature Portfolio Journal** style for **M.Sc Food Science & Nutrition (Semester 3)**, rigorously covering **Unit 1 (Biostatistics)** and **Unit 2 (Research Methods)** from *Research Aptitude* (pp. 65–95).
+An editorial academic web application built in the **Nature Portfolio Journal** style for **M.Sc Food Science & Nutrition (Semester 3)**, rigorously covering **Unit 1 (Biostatistics)** and **Unit 2 (Research Methods)**.
 
 ## 🚀 Live Demo on GitHub Pages
-`https://<your-username>.github.io/<repository-name>/`
+👉 **[Launch Research Methodology & Biostatistics Portal](https://shahvidhig-sudo.github.io/RESEARCH-METHODOLOGY/)**
 
 ---
 
@@ -20,21 +20,22 @@ Interactive simulator with pre-loaded nutrition datasets, calculated statistical
 
 ---
 
-## 📚 Syllabus Structure
+## 📚 Complete Syllabus Structure
 
 ### Unit 1: Biostatistics
 * Types of data (Qualitative vs Quantitative, Discrete vs Continuous).
 * Concepts of population and sample; probability vs non-probability sampling.
 * Basic probability theory and Gaussian normal distribution.
-* Graphical & diagrammatic presentation.
+* **Data Presentation Styles:** Bar diagrams (Simple, Sub-divided, Multiple, Percentage), Two-dimensional pie charts, Histograms, Frequency polygons, Frequency curves, Cumulative frequency curves (**Ogives** and Median determination).
 * Data collection methods: Schedules vs Questionnaires, Surveys, Interviews, Case studies, Home visits.
 * Reliability & Validity of measuring tools.
 * **Access to sequence and nutrient databases on the internet** (NCBI GenBank, UniProt, USDA FoodData Central, Shodhganga).
 
 ### Unit 2: Research Methods
+* **Research Flow & Process:** The 9-step progression from problem identification to report writing.
+* **The 6 Stages in Problem Formulation:** Broad area selection $\to$ Dissection into sub-areas $\to$ Focused area of interest $\to$ Generating research questions $\to$ Measurable objectives $\to$ Final problem statement (FINER criteria).
 * Meaning, objectives, and types of research (Descriptive, Correlational, Explanatory, Exploratory, Basic vs Applied, Deductive vs Inductive, Action Research).
-* Problem identification, justification, and hypothesis formulation ($H_0, H_1$).
-* Research design features, experimental vs control groups.
+* Research design features, concepts of variables, experimental vs control groups.
 * Hypothesis testing and errors (Type I $\alpha$ vs Type II $\beta$).
-* Interpretation of tables and figures.
-* Thesis writing architecture: Front Matter, Core Body, End Matter & Research Ethics.
+* **Interpretation:** Meaning and techniques of interpreting tables and figures with an applied clinical nutrition exemplar.
+* **Reporting:** Significance of report writing, 6 formal steps in drafting, and types of reports (Technical/Thesis, Journal article IMRaD, Policy briefs).
